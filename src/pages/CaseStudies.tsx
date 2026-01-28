@@ -25,11 +25,15 @@ import pronted from '/assets/works/Pronted Logomain copy.png'
 import sumafimlyarts from '/assets/suma-filmy-arts.png'
 import mrconstructions from '/assets/magsen-our-partner-mvr-logo-168x168.png'
 import cargill from '/assets/works/cargil.png'
-import lvlup from '/assets/logo.webp'
+// import lvlup from '/assets/logo.webp'
 import swargaseema from '/assets/swargaseema-logo-official.png'
-import levelupkhammam from '/assets/levelupkhammam.jpg'
+import levelupkhammam from '/assets/levelupone.png'
 import sadananda from '/assets/sadananda.jpg'
 import chakrasiddh from '/assets/Chakrasiddh-logo-final-horizontal-copy.png'
+
+
+
+
  
 const CaseStudies = () => {
   const [selectedFilter, setSelectedFilter] = useState('All');
@@ -120,14 +124,14 @@ const CaseStudies = () => {
     },
     {
       id: 6,
-      title: 'VSB Surface',
+      title: 'VSB Group',
       industry: 'Granite & Quartz Export',
       stage: 'Expansion',
       description: 'VSB Group, one of the top exporters of granites and quartz in South India, faced the challenge of improving their brand presence both online and offline.',
       challenge: 'The brand needed a complete revamp to establish a strong digital identity and create a tailored branding approach for each of the 45 countries they export to, while maintaining global consistency.',
       outcome: 'Brand revamp across 45 countries, +40% digital visibility, and +25% client inquiries',
       metrics: ['45-Country Brand Revamp', '40% Digital Visibility Growth', '25% Increase in Client Inquiries'],
-      slug: 'vsb',
+      slug: 'vsb-group',
       imageUrl: magsmenvsb
     },
     {
@@ -181,7 +185,7 @@ const CaseStudies = () => {
         <img 
           src={chickengarammeat} 
           alt="Telugufoods" 
-          className='w-full h-auto md:h-[350px] object-contain md:object-cover p-4 md:p-0 mx-auto'
+          className='w-full h-auto md:h-[320px] object-contain md:object-cover p-4 md:p-0 mx-auto'
         />
       </div>
 
@@ -206,7 +210,7 @@ const CaseStudies = () => {
         <img 
           src={suryacolorone} 
           alt="suryacolors" 
-          className='w-full h-auto md:h-[350px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
+          className='w-full h-auto md:h-[320px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
         />
       </div>
 
@@ -253,7 +257,7 @@ const CaseStudies = () => {
         <img 
           src={triplexthree} 
           alt="triplex"  
-          className='w-full h-auto md:h-[350px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
+          className='w-full h-auto md:h-[320px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
         />
       </div>
 
@@ -276,7 +280,7 @@ const CaseStudies = () => {
         <img 
           src={vsbthree} 
           alt="vsbgroup"  
-          className='w-full h-auto md:h-[380px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
+          className='w-full h-auto md:h-[320px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
         />
       </div>
 
@@ -286,7 +290,7 @@ const CaseStudies = () => {
           A leading stone and surfaces brand specializing in premium granite solutions 
           for modern kitchens, flooring, and architectural spaces.
         </p>
-        <Link to={`/case-studies/vsb`} className='mt-5 flex items-center gap-2'>
+        <Link to={`/case-studies/vsb-group`} className='mt-5 flex items-center gap-2'>
           <ArrowRight className="w-16 h-16 text-white bg-purple-500 rounded-full p-5" />
         </Link>
       </div>
@@ -298,7 +302,7 @@ const CaseStudies = () => {
         <img 
           src={zavainethree} 
           alt="zavaine"  
-          className='w-full h-auto md:h-[380px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
+          className='w-full h-auto md:h-[320px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
         />
       </div>
 
@@ -320,7 +324,7 @@ const CaseStudies = () => {
         <img 
           src={levelupkhammam} 
           alt="lvlup" 
-          className='w-full h-auto md:h-[380px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
+          className='w-full h-auto md:h-[320px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
         />
       </div>
 
@@ -340,7 +344,7 @@ const CaseStudies = () => {
     <img 
       src={tenalidoublehorseuradgota} 
       alt="tenalidoublehorse" 
-      className='w-full h-auto md:h-[326px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
+      className='w-full h-auto md:h-[320px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
     />
   </div>
 

@@ -12,6 +12,7 @@ import bhramaratownships from "public/assets/works/bhramara.png"
 
 
 
+
 import chickengarammeat from "/assets/works/chicken-garam-meat.png"
 import suryacolorsthree from "/assets/works/surya-color-three.png"
 import tenalidoubleproducts from "/assets/works/tenali-double-products.png"
@@ -19,6 +20,9 @@ import triplexone from "/assets/works/triplex-one.png"
 import vsb from "/assets/works/VSB.png"
 import vsbtwo from "/assets/works/vsb-two.png"
 import zavaineone from "/assets/works/zavaine-one.png"
+import levelupkhammam from "/assets/levelupkhammam.jpg"
+import levelupone from "../../public/assets/lvluphd.jpeg"
+
 
 // import tdhrishika from "/assets/works/tdh-garalu.png"
 
@@ -1311,7 +1315,7 @@ moreWork: {
     },
   },
 
-   {
+  {
     slug: "zavaine",
     category: "FMCG Home Care (Detergents)",
     title: "Zavaine",
@@ -1829,10 +1833,10 @@ work: {
     },
     {
   type: "website",
-  heading: "Website & Digital Experience",
+  heading: "Digital Experience",
 
   hero: {
-    image: "../assets/logos/Screenshot 2026-01-08 at 4.17.20 PM.png",
+    image: levelupone,
     caption:
       "Homepage redesign—storytelling-first architecture with immersive product discovery",
   },

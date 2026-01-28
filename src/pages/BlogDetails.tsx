@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock, Share2, BookmarkPlus } from 'lucide-react';
-import { getBlogPost, getRelatedPosts } from '../pages/BlogPosts';
+import { getBlogPost, getRelatedPosts } from '../pages/blogPosts';
 import RelatedArticles from '../pages/RelatedArticles';
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";

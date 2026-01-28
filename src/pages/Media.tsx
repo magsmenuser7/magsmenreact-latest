@@ -1,5 +1,16 @@
 import React from "react";
 
+
+import media07 from "/assets/media/media-07.png"
+import media06 from "/assets/media/media-06.png"
+import media05 from "/assets/media/media-05.png"
+import media04 from "/assets/media/media-04.png"
+import media03 from "/assets/media/media-03.png"
+import media02 from "/assets/media/media-02.png"
+import media01 from "/assets/media/media-01.png"
+import media011 from "/assets/media/media-011.png"
+
+
 type MediaItem = {
   id: number;
   title: string;
@@ -12,57 +23,57 @@ const mediaData: MediaItem[] = [
     id: 1,
     title:
       "Magsmen Ventures into International Territory with Launch of First Australian…",
-    image: "public/assets/media/image copy 7.png",
+    image: media07,
     link: "https://deccanbusiness.com/magsmen-ventures-into-international-territory-with-launch-of-first-australian-office-in-rowville-melbourne/",
   },
   {
     id: 2,
     title:
       "Andhra Pradesh-based brand consulting firm Magsmen on the limelight in scaling…",
-    image: "public/assets/media/image copy 6.png",
+    image: media06,
     link: "https://theprint.in/ani-press-releases/andhra-pradesh-based-brand-consulting-firm-magsmen-on-the-limelight-in-scaling-up-brands-growth-to-10x-in-less-than-9-months/1233451/",
   },
   {
     id: 3,
     title:
       "Magsmen and VIT AP Partnership: A Catalyst for Innovation and Entrepreneuri…",
-    image: "public/assets/media/image.png",
+    image: media05,
     link: "https://up18news.com/tag/magsmen-brand-consultants/",
   },
   {
     id: 4,
     title: "Discover the Next Frontier in Brand Consulting as Magsmen Elevates the…",
-    image: "public/assets/media/image copy 4.png",
+    image: media04,
     link: "https://www.zee5.com/articles/discover-the-next-frontier-in-brand-consulting-as-magsmen-elevates-the-industry-landscape",
   },
   {
     id: 5,
     title: "Magsmen: Turning Business in to Brands",
-    image: "public/assets/media/image copy 3.png",
+    image: media03,
     link: "https://marketing.siliconindia.com/vendor/magsmen-turning-business-in-to-brands-cid-16030.html",
   },
   {
     id: 6,
     title: "Andhra Pradesh-based brand consulting firm Magsmen on the limelight in scaling up…",
-    image: "public/assets/media/image copy 2.png",
+    image: media02,
     link: "https://www.aninews.in/news/business/business/andhra-pradesh-based-brand-consulting-firm-magsmen-on-the-limelight-in-scaling-up-brands-growth-to-10x-in-less-than-9-months20221124151723/",
   },
   {
     id: 7,
     title: "Expanding Horizons: Magsmen’s Journey Of Growth, Partnerships, And Ethical Brands...",
-    image: "public/assets/media/image copy.png",
+    image: media01,
     link: "https://up18news.com/expanding-horizons-magsmens-journey-of-growth-partnerships-and-ethical-brands/",
   },
   {
     id: 8,
     title: "Magsmen and VIT AP Partnership: A Catalyst for Innovation and Entrepreneurial…",
-    image: "public/assets/media/image copy 5.png",
+    image: media011,
     link: "https://firstindia.co.in/news/press-releases/magsmen-and-vit-ap-partnership-a-catalyst-for-innovation-and-entrepreneurial-success",
   },
   {
     id: 9,
     title: "Magsmen And VIT AP Partnership:A Catalyst For Innovation and Entrepreneurial…",
-    image: "public/assets/media/image copy 5.png",
+    image: media011,
     link: "https://www.uniindia.com/GenericErrorPage.htm?aspxerrorpath=/article/news.aspx#google_vignette",
   },
 ];

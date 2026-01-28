@@ -44,7 +44,7 @@ const MainLayout = () => {
 function App() {
   return (
     <Router>
-      {/* basename="/magsmenreact-latest/" */}
+
       <div className="min-h-screen bg-white">
         <ScrollToTopWithHash headerOffset={80} />
         

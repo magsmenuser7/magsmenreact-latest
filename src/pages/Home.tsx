@@ -99,7 +99,13 @@ import launchpadbanner from '/assets/services/launchpad.jpg'
 
 
 
-
+import telugufoods from "/assets/works/telugu-foods.mp4"
+import suryacolorsvideo from "/assets/works/surya-colors-video.mp4"
+import tdhrishika from "/assets/works/tdh-rishika.mp4"
+import tenalidoublehorsevideo from "/assets/works/tenali-double-horse.mp4"
+import xxxvideo from "/assets/works/triplex-video.mp4"
+import vsbvideo from "/assets/works/vsbgroup.mp4"
+import zavainevideo from "/assets/works/zavaine-video.mp4"
 
 
 
@@ -543,7 +549,7 @@ We partner with brands to transform vision into measurable growth through strate
           <Link to="/case-studies/telugu-foods">
           <div className="relative group rounded-[48px] overflow-hidden">
             <video className="w-full h-full object-cover"  autoPlay muted loop>
-                <source src="public/assets/works/telugu-foods.mp4" type="video/mp4" />
+                <source src={telugufoods} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             {/* Overlay */}
@@ -558,7 +564,7 @@ We partner with brands to transform vision into measurable growth through strate
           <Link to="/case-studies/surya-colors">
           <div className="relative group rounded-[48px] overflow-hidden">
             <video className="w-full h-full object-cover"  autoPlay muted loop>
-                <source src="public/assets/works/surya-colors-video.mp4" type="video/mp4" />
+                <source src={suryacolorsvideo} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div>
@@ -582,7 +588,7 @@ We partner with brands to transform vision into measurable growth through strate
             <Link to="/case-studies/tenali-double-horse">
           <div className="relative group rounded-[48px] overflow-hidden">
             <video className="w-full h-full object-cover"  autoPlay muted loop>
-                <source src="public/assets/works/tenali-double-horse.mp4" type="video/mp4" />
+                <source src={tenalidoublehorsevideo} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div>
@@ -596,7 +602,7 @@ We partner with brands to transform vision into measurable growth through strate
             <Link to="/case-studies/triplex">
           <div className="relative group rounded-[48px] overflow-hidden">
             <video className="w-full h-full object-cover"  autoPlay muted loop>
-                <source src="public/assets/works/triplex-video.mp4" type="video/mp4" />
+                <source src={xxxvideo} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div>
@@ -609,7 +615,7 @@ We partner with brands to transform vision into measurable growth through strate
             <Link to="/case-studies/vsb-group">
           <div className="relative group rounded-[48px] overflow-hidden">
             <video className="w-full h-full object-cover"  autoPlay muted loop>
-                <source src="public/assets/works/vsbgroup.mp4" type="video/mp4" />
+                <source src={vsbvideo} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div>
@@ -623,7 +629,7 @@ We partner with brands to transform vision into measurable growth through strate
             <Link to="/case-studies/zavaine">
           <div className="relative group rounded-[48px] overflow-hidden">
             <video className="w-full h-full object-cover"  autoPlay muted loop>
-                <source src="public/assets/works/zavaine-video.mp4" type="video/mp4" />
+                <source src={zavainevideo} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div>
@@ -692,7 +698,7 @@ We partner with brands to transform vision into measurable growth through strate
           <div className="md:w-1/2 w-full flex flex-col justify-center mt-12 md:mt-0">
             <div className="w-full max-w-2xl aspect-video bg-black">
               <video className="w-full h-full object-cover"  autoPlay muted loop>
-                <source src="public/assets/banners/magsmen-home-page-show-reel-building-brands-company-introduction-India12.mp4" type="video/mp4" />
+                <source src="/assets/banners/magsmen-home-page-show-reel-building-brands-company-introduction-India12.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>

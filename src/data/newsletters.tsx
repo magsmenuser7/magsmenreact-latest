@@ -1,11 +1,12 @@
 import React from "react";
 
+import NewsletterViewer  from "/assets/newsletters/magsmen-brand-consultants-presentation.pdf";
 
 export const newsletters = [
   {
     slug: "magsmen-brand-portfolio",
     title: "Magsmen Brand Portfolio",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/Final-Brand-presentation-for-printing-1.pdf`
+    pdf: NewsletterViewer,
   },
   {
     slug: "garthapuri",

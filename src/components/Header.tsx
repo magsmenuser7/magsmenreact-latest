@@ -35,8 +35,27 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [useWhiteLogo, setUseWhiteLogo] = useState(false);
+
+  // ⭐ NEW STATE: hide logo when scrolled down
+  const [hideLogoOnScroll, setHideLogoOnScroll] = useState(false);
+
   const location = useLocation();
   const headerRef = useRef<HTMLDivElement | null>(null);
+
+  // ⭐ SCROLL EFFECT: hide logo ONLY when scrolling down past threshold
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 120) {
+        setHideLogoOnScroll(true);   // hide logo on scroll down
+      } else {
+        setHideLogoOnScroll(false);  // show logo near top
+      }
+    };
+
+    handleScroll(); // run once on load
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const getRealBackgroundColor = (el: any) => {
@@ -54,7 +73,6 @@ const Header = () => {
       const headerEl = document.getElementById("magsmen-header");
       if (!headerEl) return;
 
-      // temporarily hide header to detect background behind
       const oldPointer = headerEl.style.pointerEvents;
       const oldZ = headerEl.style.zIndex;
       headerEl.style.pointerEvents = "none";
@@ -62,7 +80,6 @@ const Header = () => {
 
       const el = document.elementFromPoint(50, 10);
 
-      // restore header
       headerEl.style.pointerEvents = oldPointer;
       headerEl.style.zIndex = oldZ;
 
@@ -98,10 +115,17 @@ const Header = () => {
       <header
         id="magsmen-header"
         ref={headerRef}
-        className="fixed top-0 left-0 w-full z-50 transition-colors duration-300"
+        className="fixed top-0 left-0 w-full z-50 transition-all duration-300"
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 sm:px-6">
-          <Link to="/" className="flex items-center">
+
+          {/* ⭐ ONLY LOGO HIDES WHEN SCROLLED DOWN */}
+          <Link
+            to="/"
+            className={`flex items-center transition-all duration-200 ${
+              hideLogoOnScroll ? "opacity-0 pointer-events-none" : "opacity-100"
+            }`}
+          >
             <div className="p-2 md:p-3">
               <img
                 src={useWhiteLogo ? logolight : logo01}
@@ -111,6 +135,7 @@ const Header = () => {
             </div>
           </Link>
 
+          {/* Hamburger always visible */}
           <button
             className="p-2 flex items-end justify-end"
             onClick={() => setIsMenuOpen(true)}
@@ -165,7 +190,9 @@ const Header = () => {
                           aria-controls={`${item.name}-dropdown`}
                           onClick={(e) => {
                             e.stopPropagation();
-                            setOpenDropdown((prev) => (prev === item.name ? null : item.name));
+                            setOpenDropdown((prev) =>
+                              prev === item.name ? null : item.name
+                            );
                           }}
                           className="p-2"
                         >
@@ -240,17 +267,14 @@ export default Header;
 
 
 
-
 // // Header.jsx (or Header.tsx)
-// import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState, useRef } from "react";
 // import { Link, useLocation } from "react-router-dom";
 // import { Menu, X, ChevronDown } from "lucide-react";
 // import { motion, AnimatePresence } from "framer-motion";
 
-// // update these asset imports to match your project paths
-// import logo01 from "/assets/banners/logo-01.svg";
-// import logolight from "/assets/banners/logo-light.svg";
-
+// import logo01 from "/assets/banners/logo-01.svg";      // BLACK logo
+// import logolight from "/assets/banners/logo-light.svg"; // WHITE logo
 
 // const navigation = [
 //   { name: "Home", href: "/" },
@@ -261,7 +285,6 @@ export default Header;
 //     dropdown: [
 //       { name: "Brand Consulting", href: "/brand-consulting" },
 //       { name: "Personal Brand Consulting", href: "/personal-brand-consulting" },
-//       // { name: "Image Consulting", href: "/image-consulting" },
 //       { name: "Corporate Rebranding", href: "/corporate-rebranding" },
 //       { name: "Brand Expresso", href: "/brand-expresso" },
 //       { name: "Brand Creation", href: "/brand-creation" },
@@ -271,7 +294,7 @@ export default Header;
 //   },
 //   { name: "Case Studies", href: "/case-studies" },
 //   { name: "Insights", href: "/insights" },
-//   {name: "Media", href: "/media" },
+//   { name: "Media", href: "/media" },
 //   { name: "Careers", href: "/careers" },
 //   { name: "Partner With Us", href: "/partner-with-us" },
 //   { name: "Contact", href: "/contact" },
@@ -279,34 +302,85 @@ export default Header;
 
 // const Header = () => {
 //   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const [openDropdown, setOpenDropdown] = useState<string | null>(null); // name of open dropdown or null
-//   const [scrolled, setScrolled] = useState(false);
+//   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+//   const [useWhiteLogo, setUseWhiteLogo] = useState(false);
 //   const location = useLocation();
+//   const headerRef = useRef<HTMLDivElement | null>(null);
+  
 
-//   // Scroll effect (keeps from previous implementation if you want to use scrolled)
 //   useEffect(() => {
-//     const handleScroll = () => {
-//       setScrolled(window.scrollY > 50);
+//     const getRealBackgroundColor = (el: any) => {
+//       while (el) {
+//         const bg = window.getComputedStyle(el).backgroundColor;
+//         if (bg && bg !== "rgba(0, 0, 0, 0)" && bg !== "transparent") {
+//           return bg;
+//         }
+//         el = el.parentElement;
+//       }
+//       return "rgb(255,255,255)";
 //     };
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
+
+//     const checkBg = () => {
+//       const headerEl = document.getElementById("magsmen-header");
+//       if (!headerEl) return;
+
+//       // temporarily hide header to detect background behind
+//       const oldPointer = headerEl.style.pointerEvents;
+//       const oldZ = headerEl.style.zIndex;
+//       headerEl.style.pointerEvents = "none";
+//       headerEl.style.zIndex = "-1";
+
+//       const el = document.elementFromPoint(50, 10);
+
+//       // restore header
+//       headerEl.style.pointerEvents = oldPointer;
+//       headerEl.style.zIndex = oldZ;
+
+//       if (!el) return;
+
+//       const bg = getRealBackgroundColor(el);
+//       const rgb = bg.match(/\d+/g);
+//       if (!rgb) return;
+
+//       const [r, g, b] = rgb.map(Number);
+
+//       const luminance =
+//         0.2126 * (r / 255) +
+//         0.7152 * (g / 255) +
+//         0.0722 * (b / 255);
+
+//       setUseWhiteLogo(luminance < 0.5);
+//     };
+
+//     checkBg();
+//     window.addEventListener("scroll", checkBg);
+//     window.addEventListener("resize", checkBg);
+
+//     return () => {
+//       window.removeEventListener("scroll", checkBg);
+//       window.removeEventListener("resize", checkBg);
+//     };
 //   }, []);
 
 //   return (
 //     <>
 //       {/* Header bar */}
-//       <header className="fixed top-0 left-0 w-full z-50 transition-colors duration-300">
+//       <header
+//         id="magsmen-header"
+//         ref={headerRef}
+//         className="fixed top-0 left-0 w-full z-50 transition-colors duration-300"
+//       >
 //         <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 sm:px-6">
 //           <Link to="/" className="flex items-center">
-//   <div className="bg-white rounded-full p-2 md:p-3">
-//     <img
-//       src={logo01}
-//       alt="MagsmenLogo"
-//       className="h-8 sm:h-10 md:h-20 md:w-20 object-contain"
-//     />
-//   </div>
-// </Link>
-//           {/* hamburger opens side menu */}
+//             <div className="p-2 md:p-3">
+//               <img
+//                 src={useWhiteLogo ? logolight : logo01}
+//                 alt="MagsmenLogo"
+//                 className="h-8 sm:h-10 md:h-20 md:w-20 object-contain"
+//               />
+//             </div>
+//           </Link>
+
 //           <button
 //             className="p-2 flex items-end justify-end"
 //             onClick={() => setIsMenuOpen(true)}
@@ -327,7 +401,6 @@ export default Header;
 //             transition={{ type: "tween", duration: 0.28 }}
 //             className="fixed top-0 right-0 h-full text-right w-full sm:w-[350px] md:w-[400px] bg-[#000000] text-white z-[99] overflow-y-auto"
 //           >
-//             {/* Close Button */}
 //             <div className="flex justify-end p-4">
 //               <button
 //                 className="p-2"
@@ -341,15 +414,12 @@ export default Header;
 //               </button>
 //             </div>
 
-//             {/* Navigation */}
 //             <nav className="flex-1 flex flex-col space-y-2 px-8 pt-4 font-medium">
 //               {navigation.map((item) => (
 //                 <div key={item.name} className="text-right">
 //                   {item.dropdown ? (
 //                     <>
-//                       {/* Container for text-link + chevron */}
 //                       <div className="flex items-center justify-end w-full">
-//                         {/* TEXT — navigates to item.href */}
 //                         <Link
 //                           to={item.href}
 //                           className="py-2 text-lg font-semibold mr-3"
@@ -360,8 +430,6 @@ export default Header;
 //                         >
 //                           {item.name}
 //                         </Link>
-
-//                         {/* CHEVRON — toggles dropdown only */}
 //                         <button
 //                           aria-expanded={openDropdown === item.name}
 //                           aria-controls={`${item.name}-dropdown`}
@@ -379,7 +447,6 @@ export default Header;
 //                         </button>
 //                       </div>
 
-//                       {/* Dropdown Links (animated) */}
 //                       <AnimatePresence>
 //                         {openDropdown === item.name && (
 //                           <motion.div
@@ -421,9 +488,8 @@ export default Header;
 //                 </div>
 //               ))}
 
-//               {/* CTA */}
 //               <Link
-//                 to=""
+//                 to="/magsmen-brand-portfolio"
 //                 className="mt-8 bg-white text-[#683FBF] px-6 py-3 rounded-lg font-semibold text-center hover:bg-[#5a35a3] hover:text-white transition-colors shadow-lg w-full"
 //                 onClick={() => setIsMenuOpen(false)}
 //               >
@@ -438,4 +504,8 @@ export default Header;
 // };
 
 // export default Header;
+
+
+
+
 
