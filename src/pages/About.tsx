@@ -348,32 +348,6 @@ const displayedClients = showAll ? clients : clients.slice(0, 12);
           </motion.div>
         </div>
         
-        {/* Animated background elements */}
-        <motion.div 
-          className="absolute top-20 right-20 w-3 h-3 bg-[#683FBF] rounded-full opacity-60"
-          animate={{ 
-            scale: [1, 1.5, 1],
-            opacity: [0.6, 1, 0.6]
-          }}
-          transition={{ 
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div 
-          className="absolute bottom-32 left-20 w-2 h-2 bg-white rounded-full opacity-40"
-          animate={{ 
-            scale: [1, 2, 1],
-            opacity: [0.4, 0.8, 0.4]
-          }}
-          transition={{ 
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1
-          }}
-        />
       </section>
 
 

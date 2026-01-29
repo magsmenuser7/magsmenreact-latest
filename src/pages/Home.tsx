@@ -506,25 +506,6 @@ const Home = () => {
             </motion.div>
           </motion.div>
         </div>
-
-
-
-        <motion.div
-          className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 2, delay: 1.5 }}
-        />
-        <motion.div
-          className="absolute top-20 right-20 w-2 h-2 bg-[#683FBF] rounded-full opacity-60"
-          animate={{ scale: [1, 1.5, 1], opacity: [0.6, 1, 0.6] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute bottom-32 left-20 w-1 h-1 bg-white rounded-full opacity-40"
-          animate={{ scale: [1, 2, 1], opacity: [0.4, 0.8, 0.4] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        />
       </section>
 
     
