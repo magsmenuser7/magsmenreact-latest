@@ -13,9 +13,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div>
+          <div className='flex flex-col justify-center'>
             {/* <div className="text-2xl font-bold mb-4">MAGSMEN</div> */}
-            <img src={Favi01} alt="MagsmenLogo" className="h-[10rem] w-auto mx-auto" />
+            <img src={Favi01} alt="MagsmenLogo" className="h-[10rem] w-auto " />
             <p className="text-gray-300 mb-4 mt-5 text-justify">
               As one of the leading brand consulting firms, Magsmen is a great choice for businesses that want to turn themselves into a brand. With 9 awards on brand strategy, Magsmen partnered with some of the industry's leading brands in India.
             </p>
