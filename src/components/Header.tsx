@@ -246,7 +246,7 @@ const Header = () => {
               ))}
 
               <Link
-                to="/magsmen-brand-portfolio"
+                to="/final-brand-presentation-for-printing"
                 className="mt-8 bg-white text-[#683FBF] px-6 py-3 rounded-lg font-semibold text-center hover:bg-[#5a35a3] hover:text-white transition-colors shadow-lg w-full"
                 onClick={() => setIsMenuOpen(false)}
               >

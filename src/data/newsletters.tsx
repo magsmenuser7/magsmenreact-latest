@@ -26,6 +26,8 @@ import thebottledwaterisnotjusthydratingitistransforming  from "/assets/newslett
 import branddetox  from "/assets/newsletters/brand-detox.pdf";
 import mibbsbrandcorner  from "/assets/newsletters/mibbs-brand-corner.pdf";
 import indiaisgoldobsessionissplittingintotwo  from "/assets/newsletters/india-is-gold-obsession-is-splitting-into-two.pdf";
+import brandcornertrademarksanddeceptivepractices  from "/assets/newsletters/brand_corner_trademarks_and_deceptive_practices.pdf";
+import FinalBrandpresentationforprinting1  from "/assets/newsletters/Final-Brand-presentation-for-printing-1.pdf";
 
 
 
@@ -160,6 +162,16 @@ export const newsletters = [
     slug: "india-is-gold-obsession-is-splitting-into-two",
     title: "India Is Gold Obsession Is Splitting Into Two",
     pdf: indiaisgoldobsessionissplittingintotwo,
+  },
+  {
+    slug: "brand-corner-trademarks-and-deceptive-practices",
+    title: "Brand Corner: Trademarks and Deceptive Practices",
+    pdf: brandcornertrademarksanddeceptivepractices,
+  },
+  {
+    slug: "final-brand-presentation-for-printing",
+    title: "Final Brand Presentation for Printing",
+    pdf: FinalBrandpresentationforprinting1,
   },
  
   
