@@ -245,13 +245,23 @@ const Header = () => {
                 </div>
               ))}
 
-              <Link
-                to="/final-brand-presentation-for-printing"
+              <a
+                href="https://schoolofstrategy.magsmen.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-8 bg-white text-[#683FBF] px-6 py-3 rounded-lg font-semibold text-center hover:bg-[#5a35a3] hover:text-white transition-colors shadow-lg w-full"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Portfolio
-              </Link>
+              </a>
+
+              {/* <Link
+                to="https://schoolofstrategy.magsmen.com/"
+                className="mt-8 bg-white text-[#683FBF] px-6 py-3 rounded-lg font-semibold text-center hover:bg-[#5a35a3] hover:text-white transition-colors shadow-lg w-full"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Portfolio
+              </Link> */}
             </nav>
           </motion.aside>
         )}
