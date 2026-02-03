@@ -1080,6 +1080,12 @@ We partner with brands to transform vision into measurable growth through strate
               >
                 Take the Brand Audit
               </Link>
+               <Link
+                to="/brand-audit-magsmen"
+                className="border border-gray-300 text-purple-200 px-8 py-4 font-medium hover:bg-[#683FBF] hover:text-white transition-colors"
+              >
+                Assess my brand now
+              </Link>
             </div>
           </motion.div>
         </div>

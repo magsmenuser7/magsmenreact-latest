@@ -1,17 +1,25 @@
 import React from "react";
 
-import NewsletterViewer  from "/assets/newsletters/magsmen-brand-consultants-presentation.pdf";
+import magsmenportfolio  from "/assets/newsletters/magsmen-brand-consultants-presentation.pdf";
+import garthapuriportfolio  from "/assets/newsletters/client-version-Garthapuri.pdf";
+import otcportfolio  from "/assets/newsletters/otc-purple.pdf";
+
 
 export const newsletters = [
   {
     slug: "magsmen-brand-portfolio",
     title: "Magsmen Brand Portfolio",
-    pdf: NewsletterViewer,
+    pdf: magsmenportfolio,
   },
   {
     slug: "garthapuri",
     title: "Garthapuri",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/client-version-Garthapuri.pdf`
+    pdf: garthapuriportfolio,
+  },
+   {
+    slug: "otc-purple",
+    title: "Otc Purple",
+    pdf: otcportfolio,
   },
   {
     slug: "news-letter-august-2023",
@@ -123,14 +131,6 @@ export const newsletters = [
     title: "Mibbs Brand Corner",
     pdf: `${import.meta.env.BASE_URL}assets/newsletters/mibbs-brand-corner.pdf`
   },
-  {
-    slug: "otc-purple",
-    title: "Otc Purple",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/otc-purple.pdf`
-  },
-  {
-    slug: "otc-purple",
-    title: "Otc Purple",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/otc-purple.pdf`
-  },
+ 
+  
 ];

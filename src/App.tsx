@@ -27,6 +27,23 @@ import Media from './pages/Media';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Faqs from './pages/Faqs';
 import NewsletterViewer from "./pages/NewsletterViewer";
+import AndhrapradeshAviationNetwork from "./pages/AndhrapradeshAviationNetwork";
+import BrandaAditSreenidhiGlobalSchool from './pages/BrandaAditSreenidhiGlobalSchool';
+import BrandAuditSriSaiRmaHighSchool from './pages/BrandAuditSriSaiRmaHighSchool';
+import MagsmenBrandAuditSystem from './pages/MagsmenBrandAuditSystem';
+import DelhiWorldSchoolBrandAndDigitalAudit from './pages/DelhiWorldSchoolBrandAndDigitalAudit';
+import BrandHealthInfographicDWSChintal from './pages/BrandHealthInfographicDWSChintal';
+import InfiniteAndhraStrategicTourismBlueprint from './pages/InfiniteAndhraStrategicTourismBlueprint';
+import SowmyaFeeds from './pages/SowmyaFeeds';
+import TdhXPureONatural from './pages/TdhXPureONatural';
+import TdhProtienDashboard from './pages/TdhProtienDashboard';
+import TdhProductCommunicationAnalysis from './pages/TdhProductCommunicationAnalysis';
+import TdhGroupStrategicDashboard from './pages/TdhGroupStrategicDashboard';
+import TdhContentCalendarJAN2026 from './pages/TdhContentCalendarJAN2026';
+import WealthManagementLandscape from './pages/WealthManagementLandscape';
+
+
+
 
 // 2. Define a Layout Component that includes Header and Footer
 const MainLayout = () => {
@@ -75,12 +92,31 @@ function App() {
             <Route path="/faqs" element={<Faqs />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/blog/:slug" element={<BlogDetail />} />
+
           </Route>
 
           {/* GROUP 2: Pages WITHOUT Header & Footer */}
           {/* This sits outside the MainLayout */}
           <Route path="/:slug" element={<NewsletterViewer />} />
-          
+          <Route path="/andhra-pradesh-aviation-network" element={<AndhrapradeshAviationNetwork />} />
+          <Route path="/brand-audit-sreenidhi-global-school" element={<BrandaAditSreenidhiGlobalSchool />} />
+          <Route path="/brand-audit-sri-sai-rma-high-school" element={<BrandAuditSriSaiRmaHighSchool />} />
+          <Route path="/brand-audit-magsmen" element={<MagsmenBrandAuditSystem />} />
+          <Route path="/brand-audit-delhi-world-school" element={<DelhiWorldSchoolBrandAndDigitalAudit />} />
+          <Route path="/brand-health-infographic-delhi-world-school" element={<BrandHealthInfographicDWSChintal />} />
+          <Route path="/infinite-andhra-strategic-tourism-blueprint" element={<InfiniteAndhraStrategicTourismBlueprint />} />
+          <Route path="/sowmya-feeds" element={<SowmyaFeeds />} />
+          <Route path="/tdh-x-pure-o-natural" element={<TdhXPureONatural />} />
+          <Route path="/tdh-protien-dashboard" element={<TdhProtienDashboard />} />
+          <Route path="/tdh-product-communication-analysis" element={<TdhProductCommunicationAnalysis />} />
+          <Route path="/tdh-group-strategic-dashboard" element={<TdhGroupStrategicDashboard />} />
+          <Route path="/tdh-content-calendar-jan-2026" element={<TdhContentCalendarJAN2026 />} />
+          <Route path="/wealth-management-landscape" element={<WealthManagementLandscape />} />
+
+
+
+
+
         </Routes>
       </div>
     </Router>
