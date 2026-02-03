@@ -3,6 +3,31 @@ import React from "react";
 import magsmenportfolio  from "/assets/newsletters/magsmen-brand-consultants-presentation.pdf";
 import garthapuriportfolio  from "/assets/newsletters/client-version-Garthapuri.pdf";
 import otcportfolio  from "/assets/newsletters/otc-purple.pdf";
+import newsletteraugust2023  from "/assets/newsletters/news-letter-august-2023.pdf";
+import thenameofthearticleindianbrandsuccessstories  from "/assets/newsletters/the-name-of-the-article-indian-brand-success-stories.pdf";
+import brandcornernovemberedition  from "/assets/newsletters/brand-corner-november-edition.pdf";
+import brandarchitecture  from "/assets/newsletters/brand-architecture.pdf";
+import brandrefreshrebrandingjune  from "/assets/newsletters/brand-refresh-rebranding-june.pdf";
+import digitaltwinbrandstrategy  from "/assets/newsletters/digital-twin-brand-strategy.pdf";
+import monochromaticcolorsinbranding  from "/assets/newsletters/monochromatic-colors-in-branding.pdf";
+import bandcornerthenewageofbuyingbrandactivism  from "/assets/newsletters/band-corner-the-new-age-of-buying-brand-activism.pdf";
+import brandnamingunlockthesoulofyourbrand  from "/assets/newsletters/brand-naming-unlock-the-soul-of-your-brand.pdf";
+import thepowerofconsistencywhybrandtonematters  from "/assets/newsletters/the-power-of-consistency-why-brand-tone-matters.pdf";
+import acuttingedgeapproachinbrandingcompressed  from "/assets/newsletters/a-cutting-edge-approach-in-branding-compressed.pdf";
+import brandcornertrademark  from "/assets/newsletters/brand-corner-trademark.pdf";
+import brandcornernewslettermarch  from "/assets/newsletters/brand-corner-news-letter-march.pdf";
+import brandcornerbeyondsingleuse  from "/assets/newsletters/brand-corner-beyond-single-use.pdf";
+import magsmenbrandcornerethicalbrandingmay  from "/assets/newsletters/magsmen-brand-corner-ethical-branding-may.pdf";
+import quietbrandingsilencethatspeaksvolumes  from "/assets/newsletters/quiet-branding-silence-that-speaks-volumes.pdf";
+import theraiseofreferralmarketinggrowthstrategyorgreyzone  from "/assets/newsletters/the-raise-ofreferral-marketing-growth-strategy-or-grey-zone.pdf";
+import glocalizationwhereglobalmeetslocal  from "/assets/newsletters/glocalization-where-global-meets-local.pdf";
+import festivecommercewhynavratriisthenewbrandbattleground  from "/assets/newsletters/festive-commerce-why-navratri-is-the-new-brand-battleground.pdf";
+import thebottledwaterisnotjusthydratingitistransforming  from "/assets/newsletters/the-bottled-water-isn’t-just-hydrating-it’s-transforming.pdf";
+import branddetox  from "/assets/newsletters/brand-detox.pdf";
+import mibbsbrandcorner  from "/assets/newsletters/mibbs-brand-corner.pdf";
+import indiaisgoldobsessionissplittingintotwo  from "/assets/newsletters/india-is-gold-obsession-is-splitting-into-two.pdf";
+
+
 
 
 export const newsletters = [
@@ -24,112 +49,117 @@ export const newsletters = [
   {
     slug: "news-letter-august-2023",
     title: "news letter august 2023",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/news-letter-august-2023.pdf`
+    pdf: newsletteraugust2023,
   },
   {
     slug: "the-name-of-the-article-indian-brand-success-stories",
     title: "The Name of the Article: Indian Brand Success Stories",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/the-name-of-the-article-indian-brand-success-stories.pdf`
+    pdf: thenameofthearticleindianbrandsuccessstories,
   },
   {
     slug: "brand-corner-november-edition",
     title: "Brand Corner November Edition",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/brand-corner-november-edition.pdf`
+    pdf: brandcornernovemberedition,
   },
   {
     slug: "brand-architecture",
     title: "Brand Architecture",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/brand-architecture.pdf`
+    pdf: brandarchitecture,
   },
   {
     slug: "brand-refresh-rebranding-june",
     title: "Brand Refresh & Rebranding June",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/brand-refresh-rebranding-june.pdf`
+    pdf: brandrefreshrebrandingjune,
   },
   {
     slug: "digital-twin-brand-strategy",
     title: "Digital Twin Brand Strategy",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/digital-twin-brand-strategy.pdf`
+    pdf: digitaltwinbrandstrategy,
   },
   {
     slug: "monochromatic-colors-in-branding",
     title: "Monochromatic Colors in Branding",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/monochromatic-colors-in-branding.pdf`
+    pdf: monochromaticcolorsinbranding,
   },
    {
     slug: "band-corner-the-new-age-of-buying-brand-activism",
     title: "Band Corner: The New Age of Buying Brand Activism",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/band-corner-the-new-age-of-buying-brand-activism.pdf`
+    pdf: bandcornerthenewageofbuyingbrandactivism,
   },
   {
     slug: "brand-naming-unlock-the-soul-of-your-brand",
     title: "Brand Naming: Unlock the Soul of Your Brand",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/brand-naming-unlock-the-soul-of-your-brand.pdf`
+    pdf: brandnamingunlockthesoulofyourbrand,
   },
   {
     slug: "the-power-of-consistency-why-brand-tone-matters",
     title: "The Power of Consistency: Why Brand Tone Matters",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/the-power-of-consistency-why-brand-tone-matters.pdf`
+    pdf: thepowerofconsistencywhybrandtonematters,
   },
    {
     slug: "a-cutting-edge-approach-in-branding-compressed",
     title: "A Cutting-Edge Approach in Branding Compressed",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/a-cutting-edge-approach-in-branding-compressed.pdf`
+    pdf: acuttingedgeapproachinbrandingcompressed,
   },
   {
     slug: "brand-corner-trademark",
     title: "Brand Corner: Trademark",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/brand-corner-trademark.pdf`
+    pdf: brandcornertrademark,
   },
   {
     slug: "brand-corner-news-letter-march",
     title: "brand corner news letter march",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/brand-corner-news-letter-march.pdf`
+    pdf: brandcornernewslettermarch,
   },
    {
     slug: "brand-corner-beyond-single-use",
     title: "brand corner beyond single use",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/brand-corner-beyond-single-use.pdf`
+    pdf: brandcornerbeyondsingleuse,
   },
   {
     slug: "magsmen-brand-corner-ethical-branding-may",
     title: "Magsmen Brand Corner: Ethical Branding May",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/magsmen-brand-corner-ethical-branding-may.pdf`
+    pdf: magsmenbrandcornerethicalbrandingmay,
   },
   {
     slug: "quiet-branding-silence-that-speaks-volumes",
     title: "Quiet Branding: Silence That Speaks Volumes",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/quiet-branding-silence-that-speaks-volumes.pdf`
+    pdf: quietbrandingsilencethatspeaksvolumes,
   },
    {
     slug: "the-raise-ofreferral-marketing-growth-strategy-or-grey-zone",
     title: "The Raise of Referral Marketing: Growth Strategy or Grey Zone?",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/the-raise-ofreferral-marketing-growth-strategy-or-grey-zone.pdf`
+    pdf: theraiseofreferralmarketinggrowthstrategyorgreyzone,
   },
   {
     slug: "glocalization-where-global-meets-local",
     title: "Glocalization: Where Global Meets Local",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/glocalization-where-global-meets-local.pdf`
+    pdf: glocalizationwhereglobalmeetslocal,
   },
   {
     slug: "festive-commerce-why-navratri-is-the-new-brand-battleground",
     title: "Festive Commerce: Why Navratri is the New Brand Battleground",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/festive-commerce-why-navratri-is-the-new-brand-battleground.pdf`
+    pdf: festivecommercewhynavratriisthenewbrandbattleground,
   },
   {
     slug: "the-bottled-water-isn’t-just-hydrating-it’s-transforming",
     title: "The Bottled Water Isn’t Just Hydrating, It’s Transforming",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/the-bottled-water-isn’t-just-hydrating-it’s-transforming.pdf`
+    pdf: thebottledwaterisnotjusthydratingitistransforming,
   },
   {
     slug: "brand-detox",
     title: "Brand Detox",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/brand-detox.pdf`
+    pdf: branddetox,
   },
    {
     slug: "mibbs-brand-corner",
     title: "Mibbs Brand Corner",
-    pdf: `${import.meta.env.BASE_URL}assets/newsletters/mibbs-brand-corner.pdf`
+    pdf: mibbsbrandcorner,
+  },
+  {
+    slug: "india-is-gold-obsession-is-splitting-into-two",
+    title: "India Is Gold Obsession Is Splitting Into Two",
+    pdf: indiaisgoldobsessionissplittingintotwo,
   },
  
   
