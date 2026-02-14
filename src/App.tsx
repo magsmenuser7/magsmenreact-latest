@@ -41,6 +41,9 @@ import TdhProductCommunicationAnalysis from './pages/TdhProductCommunicationAnal
 import TdhGroupStrategicDashboard from './pages/TdhGroupStrategicDashboard';
 import TdhContentCalendarJAN2026 from './pages/TdhContentCalendarJAN2026';
 import WealthManagementLandscape from './pages/WealthManagementLandscape';
+import MagsmenStrategicProposal from './pages/MagsmenStrategicProposal';
+
+
 
 
 
@@ -112,6 +115,7 @@ function App() {
           <Route path="/tdh-group-strategic-dashboard" element={<TdhGroupStrategicDashboard />} />
           <Route path="/tdh-content-calendar-jan-2026" element={<TdhContentCalendarJAN2026 />} />
           <Route path="/wealth-management-landscape" element={<WealthManagementLandscape />} />
+          <Route path="/magsmen-strategic-proposal" element={<MagsmenStrategicProposal />} />
 
 
 
