@@ -19,8 +19,6 @@ import award3 from '/assets/awards/awards3.png'
 import aboutimage from '/assets/banners/aboutimage.png';
 
 
-
-
 import magsmenSweatTeluguFoods from '/assets/Telugu-foods.jpg';
 import magsmenColors from '/assets/magsmen-homepage-clients-colors-168x168.png';
 import magsmenTenaliDoubleHorse from '/assets/magsmen-homepage-clients-tenalidoublehorse-168x168.png';
@@ -184,21 +182,24 @@ import sadananda from '/assets/sadananda-Final-Logo--orange.png'
       id: 1,
       icon: <Trophy className="w-full h-full text-purple-200" />,
       label: 'Consultant of the Year 2023',
-      description: 'Recognized for outstanding advisory services and client results.', // Added description
+      shortDescription: 'Indian Brand Consultants Association', // Added short description
+      description: 'For outstanding advisory services and measurable client outcomes.', // Added description
       image: award1
     },
     {
       id: 2,
       icon: <Award className="w-full h-full text-purple-200" />,
       label: 'Top 100 Admiring Marketing Leaders',
-      description: 'Acknowledged among global leaders for innovative marketing strategies.', // Added description
+      shortDescription: 'Global Admiring Council', // Added short description
+      description: 'Acknowledged among the world\'s most innovative marketing strategists.', // Added description
       image: award2
     },
     {
       id: 3,
       icon: <Sparkles className="w-full h-full text-purple-200" />,
-      label: 'MMA Global Jury Member',
-      description: 'Serving on the Mobile Marketing Association Global awards judging panel.', // Added description
+      label: 'Jury Member, MMA Global',
+      shortDescription: 'Mobile Marketing Association', // Added short description
+      description: 'Invited to evaluate global excellence in mobile marketing.', // Added description
       image: award3
     },
   ];
@@ -325,7 +326,8 @@ const displayedClients = showAll ? clients : clients.slice(0, 12);
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Crafting­ businesses­ that­ make­ waves<br/>­we're ­ the­ architects­ at ­play 
+              We don't build brands.<br/>
+We build what brands are built on.
               <motion.span 
                 className="text-[#000]"
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -341,29 +343,35 @@ const displayedClients = showAll ? clients : clients.slice(0, 12);
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-             At Magsmen, we bring together strategy and innovation to make a real <br/>
-             difference globally. We're not just about building brands; we're all about <br/>
-             creating connections that stick.
+            Strategic clarity. Market positioning. Long-term advantage.
+For Indian businesses ready to stop competing on price and start competing on meaning.
+
             </motion.p>
           </motion.div>
         </div>
         
       </section>
 
-
 <section className="bg-black py-36">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
       <div className='my-auto'>
-            <h2 className="text-4xl text-white font-bold text-gray-900 mb-4 md:text-5xl font-light tracking-tight">Our  Story</h2>
+            <h2 className="text-4xl text-white font-bold text-gray-900 mb-4 md:text-5xl font-light tracking-tight">Our Beginning:</h2>
       </div>
       {/* Left paragraph */}
       <div className='mt-5'>
         <p className="text-lg text-white leading-relaxed text-white">
-          We saw Indian businesses struggling to articulate their value in a crowded market. Magsmen was built to bring strategic clarity to help brands stand out, scale up, and sustain in an ever-changing business environment.
+          We’ve observed a pattern over the years…
+Ambitious Indian businesses were investing in marketing, hiring agencies, launching campaigns and yet struggling to articulate their true value.
+The problem wasn’t effort,
+It was direction.
+
         </p>
          <p className="text-lg text-gray-100 leading-relaxed pt-5">
-          Every business has a story worth telling. Our mission is to help you tell it in a way that resonates, converts, and creates lasting impact.
+          Magsmen was founded to bring strategic clarity into brand building by replacing guesswork with structure and short-term noise with long-term positioning.
+We don’t just build brands,
+We architect growth systems.
+
         </p>
       </div>
       
@@ -546,14 +554,7 @@ const displayedClients = showAll ? clients : clients.slice(0, 12);
     {/* RIGHT CONTENT */}
 <div className="lg:col-span-9">
   <p className="leading-tight font-medium text-gray-900 max-w-5xl text-lg">
-    At Magsmen, we envision a world where brands are{" "}
-    <span className=" px-2 py-0">
-      not just seen but felt.
-    </span>{" "}
-    We strive to create connections that resonate deeply, transforming{" "}
-    <span className=" px-2 py-0">
-      ordinary interactions into memorable experiences.
-    </span>
+    At Magsmen, we envision a world where brands are not just seen but felt.
   </p>
 </div>
   </div>
@@ -574,49 +575,13 @@ const displayedClients = showAll ? clients : clients.slice(0, 12);
     {/* RIGHT CONTENT */}
 <div className="lg:col-span-9">
   <p className="text-lg leading-tight font-medium text-gray-900 max-w-5xl">
-    Our mission is to{" "}
-    <span className=" px-2 py-0">
-      blend strategy with creativity,
-    </span>{" "}
-    constructing smooth roads that lead brands to{" "}
-    <span className=" px-2 py-0">
-      new heights.
-    </span>
-    <br /><br />
-    We are dedicated to understanding the{" "}
-    <span className=" px-2 py-0">
-      unique essence of each brand
-    </span>{" "}
-    and crafting{" "}
-    <span className=" px-2 py-0">
-      bespoke solutions
-    </span>{" "}
-    that amplify their presence.
-  </p>
-</div>
+    We combine strategy and creativity to help your brand stand out, connect deeply and grow with purpose.
 
-
-
-  </div>
-
-
-
+    </p>
+    </div>
+    </div>
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
 
    <section className="relative bg-white py-20 overflow-hidden">
   <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -654,22 +619,22 @@ const displayedClients = showAll ? clients : clients.slice(0, 12);
           {
             year: "2019",
             title: "The Beginning",
-            desc: "Magsmen was founded with a clear mission to help brands grow with clarity, purpose, and strategic depth.",
+            desc: "Magsmen was founded with one belief: brands deserve more than last-minute logos and borrowed frameworks. We started small, but we started with the purpose of helping businesses grow with clarity, strategy, and depth.",
           },
           {
             year: "2020",
-            title: "First Growth Phase",
-            desc: "Expanded our service offerings and partnered with fast-growing regional brands across FMCG and services.",
+            title: "The Growth",
+            desc: "We expanded our offerings and partnered with fast-growing regional brands across FMCG and services. Founders began trusting us not just with campaigns, but with their long-term positioning. Our team grew. So did their results.",
           },
           {
             year: "2022",
-            title: "National Recognition",
-            desc: "Worked with category leaders and challenger brands, delivering measurable business impact and national visibility.",
+            title: "The Recognition",
+            desc: "Category leaders and challenger brands came to us. We delivered positioning shifts that translated into measurable business impact. National visibility followed. Not because we chased awards—but because we chased outcomes.",
           },
           {
-            year: "Today",
+            year: "Today — The Future",
             title: "Building the Future",
-            desc: "We continue to partner with ambitious founders and leadership teams to build brands that scale, endure, and lead.",
+            desc: "We continue to partner with ambitious founders and leadership teams.Not for a single project. For the long haul.",
           },
         ].map((item, idx) => (
           <div
@@ -750,9 +715,14 @@ const displayedClients = showAll ? clients : clients.slice(0, 12);
               <h2 className="text-4xl font-bold text-white mb-4 md:text-5xl font-light tracking-tight">The Founder</h2>
               <h3 className="text-2xl text-[#683FBF] font-semibold mb-4">Sandeep N</h3>
               <div className="space-y-4 text-gray-300">
-                <p>Founder of Magsmen Brand Consultants and visionary behind India's most strategic brand transformations.</p>
-                <p>Magsmen's journey began in 2020, led by the visionary Mr. N. Sandeep. Leveraging his 8+ years of brand-building expertise, his innovative approach has positioned Magsmen as a leading force in the industry within four years.</p>
-                <p>Honored with several prestigious awards, Mr. Sandeep goes beyond formulas, believing in the power of brand storytelling to unlock growth potential for businesses of all sectors.</p>
+                
+                <p>Eight years ago, Sandeep stopped following the formula.</p>
+                <p>While the industry chased viral moments and short-term wins, he asked a different question:
+What does it take for a brand to outlive its founder?</p>
+
+                <p>He spent nearly a decade in deep research not just studying brand strategy, but market psychology, consumer behavior, and why some brands fade while others become legacy.</p>
+
+                <p>Today his innovative approach has positioned Magsmen as a leading force in the industry.</p>
                 <ul className="space-y-2">
                   <li className="flex items-center">
                     <Star className="w-5 h-5 text-[#683FBF] mr-3" />
@@ -790,9 +760,9 @@ const displayedClients = showAll ? clients : clients.slice(0, 12);
             transition={{ duration: 0.6 }}
             className="text-left mb-10"
           >
-            <h2 className="text-6xl text-gray-900 mb-6 tracking-tight md:text-5xl font-light">Our process</h2>
+            <h2 className="text-6xl text-gray-900 mb-6 tracking-tight md:text-5xl font-light">The Process</h2>
             <p className="text-xl text-gray-600 font-light max-w-3xl">
-              A proven framework that transforms businesses into memorable brands
+              A disciplined progression from ambiguity to advantage.
             </p>
           </motion.div>
 
@@ -800,20 +770,35 @@ const displayedClients = showAll ? clients : clients.slice(0, 12);
             {[
               {
                 step: '01',
-                title: 'Discover',
-                description: 'We audit, research, and decode your brand\'s current position in the market.',
+                title: 'DIAGNOSE',
+                description: 'We audit. We decode. We listen to what the market won\'t tell you directly.',
+                bullets: [
+                  'Brand audit & competitive landscape',
+                  'Consumer perception research',
+                  'Strategic gap analysis'
+                ],
                 icon: <Users className="w-8 h-8 text-[#683FBF]" />
               },
               {
                 step: '02',
-                title: 'Strategize',
-                description: 'We design your unique market positioning and compelling brand narrative.',
+                title: 'BLUEPRINT',
+                description: 'We architect. We position. We give your brand a spine.',
+                bullets: [
+                  'Market positioning & narrative',
+                  'Brand architecture',
+                  'Visual & verbal identity systems'
+                ],
                 icon: <TrendingUp className="w-8 h-8 text-[#683FBF]" />
               },
               {
                 step: '03',
-                title: 'Activate',
-                description: 'We build, launch, and scale your brand experience across all touchpoints.',
+                title: 'FLIGHT',
+                description: 'We launch. We scale. We stay as your strategic mentors.',
+                  bullets: [
+                    'Go-to-market activation',
+                    'Brand experience design',
+                    'Ongoing strategy stewardship'
+                  ],
                 icon: <CheckCircle className="w-8 h-8 text-[#683FBF]" />
               }
             ].map((process, index) => (
@@ -836,6 +821,16 @@ const displayedClients = showAll ? clients : clients.slice(0, 12);
                 </div>
                 <h3 className="text-2xl font-medium text-gray-900 mb-4 tracking-tight">{process.title}</h3>
                 <p className="text-gray-600 leading-relaxed font-light text-lg">{process.description}</p>
+                {process.bullets && (
+                  <ul className="mt-4 space-y-2">
+                    {process.bullets.map((bullet, idx) => (
+                      <li key={idx} className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-[#683FBF] mt-1 mr-3" />
+                        <span className="text-gray-600">{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </motion.div>
             ))}
           </div>
@@ -908,7 +903,11 @@ const displayedClients = showAll ? clients : clients.slice(0, 12);
                 <p className="text-xl font-bold uppercase text-white tracking-wide leading-snug">
                   {item.label}
                 </p>
+                <p className="text-sm text-white/70 font-medium mt-1">
+                  {item.shortDescription}
+                </p>
               </div>
+              
 
           
               <div className="md:col-span-7">

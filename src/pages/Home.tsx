@@ -235,21 +235,24 @@ const Home = () => {
       id: 1,
       icon: <Trophy className="w-full h-full text-purple-200" />,
       label: 'Consultant of the Year 2023',
-      description: 'Recognized for outstanding advisory services and client results.', // Added description
+      shortDescription: 'Indian Brand Consultants Association',
+      description: 'For outstanding advisory services and measurable client outcomes.', // Added description
       image: award1
     },
     {
       id: 2,
       icon: <Award className="w-full h-full text-purple-200" />,
       label: 'Top 100 Admiring Marketing Leaders',
-      description: 'Acknowledged among global leaders for innovative marketing strategies.', // Added description
+      shortDescription: 'Global Admiring Council',
+      description: 'Acknowledged among the world\'s most innovative marketing strategists.', // Added description
       image: award2
     },
     {
       id: 3,
       icon: <Sparkles className="w-full h-full text-purple-200" />,
       label: 'MMA Global Jury Member',
-      description: 'Serving on the Mobile Marketing Association Global awards judging panel.', // Added description
+      shortDescription: 'Mobile Marketing Association',
+      description: 'Invited to evaluate global excellence in mobile marketing.', // Added description
       image: award3
     },
   ];
@@ -456,7 +459,9 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.7 }}
             >
-              Struggling to  Build  Your  Brand? {" "} Strategy Starts Here.
+              A good logo is nice.
+ {" "} A smart strategy is better.
+
               {/* <AnimatePresence>
                 <motion.span
                   key={currentTextIndex}
@@ -476,7 +481,8 @@ const Home = () => {
                 </motion.span>
               </AnimatePresence> */}
 
-              <p className='md:text-2xl text-xl tracking-wider py-5 font-normal text-black'>We work closely with brands to understand their customers, industry, and culture. With our ideas and insights, we help them keep up with changing expectations and grow their business.</p>
+              <p className='md:text-2xl text-xl tracking-wider py-5 font-normal text-black'>We study your customers and culture, so your brand doesn’t just look good it works.
+</p>
             </motion.h1>
 
             <motion.div
@@ -521,8 +527,12 @@ const Home = () => {
             
           </div>
           <p className="md:text-1xl text-xl tracking-wider font-normal text-black">
-              Every success story starts with a bold decision.
-We partner with brands to transform vision into measurable growth through strategy, design, and execution that actually moves the needle.
+              Strong brands are built patiently.
+We partner with you to turn ideas into progress that lasts.
+Good marketing works hard,
+Great strategy works smarter.
+We complement your team with the insight and structure that help your brand grow with purpose.
+
             </p>
 
           {/* Right Image Grid */}
@@ -765,10 +775,9 @@ We partner with brands to transform vision into measurable growth through strate
                 <span className="text-2xl text-purple-500">%</span>
               </div>
               
-              <h3 className="text-2xl font-bold text-white mb-6 tracking-tight">Strategy Mastery</h3>
+              <h3 className="text-2xl font-bold text-white mb-6 tracking-tight">Strategic Depth</h3>
               <p className="text-gray-400 font-light leading-relaxed">
-                Sophisticated brand health diagnostics and growth-path unveiling through 
-                proprietary cultural intelligence.
+                Clear brand evaluation and focused direction that uncover real opportunities for growth.
               </p>
             </div>
             {/* Hover Accent */}
@@ -788,10 +797,9 @@ We partner with brands to transform vision into measurable growth through strate
                 <span className="text-2xl text-purple-500">%</span>
               </div>
               
-              <h3 className="text-2xl font-bold text-white mb-6 tracking-tight">Performance Engine</h3>
+              <h3 className="text-2xl font-bold text-white mb-6 tracking-tight"> Impact Performance</h3>
               <p className="text-gray-300 font-light leading-relaxed">
-                Precision-engineered conversion cycles designed to turn digital 
-                touchpoints into permanent brand advocates.
+                Smart systems that convert attention into trust — and trust into long-term loyalty.
               </p>
             </div>
             <div className="absolute bottom-0 left-0 w-full h-1 bg-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
@@ -810,10 +818,9 @@ We partner with brands to transform vision into measurable growth through strate
                 <span className="text-2xl text-purple-500">%</span>
               </div>
               
-              <h3 className="text-2xl font-bold text-white mb-6 tracking-tight">Growth Scalability</h3>
+              <h3 className="text-2xl font-bold text-white mb-6 tracking-tight"> Sustainable Expansion</h3>
               <p className="text-gray-400 font-light leading-relaxed">
-                Uncompromising market expansion strategies that protect brand essence 
-                while achieving maximum global footprint.
+                 Growth strategies built to scale responsibly while staying true to your brand core.
               </p>
             </div>
             <div className="absolute bottom-0 left-0 w-full h-1 bg-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
@@ -989,6 +996,9 @@ We partner with brands to transform vision into measurable growth through strate
               <div className="md:col-span-4">
                 <p className="text-xl font-bold uppercase text-white tracking-wide leading-snug">
                   {item.label}
+                </p>
+                <p className="text-sm text-white/70 font-medium mt-1">
+                  {item.shortDescription}
                 </p>
               </div>
 
