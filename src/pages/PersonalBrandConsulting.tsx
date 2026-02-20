@@ -22,7 +22,7 @@ const serviceData = {
     title: 'Personal Brand',
     title_two: 'Consulting',
     subtitle: 'Elevate Your Professional Presence',
-    heroDescription: 'We help an individual understand which platforms are best for their business and how to use them to reach their target audience. Don’t just build a brand, we help you build a legacy!',
+    heroDescription: ' We help individuals identify the right platforms for their goals and craft a powerful presence that connects with the right audience. Don’t just build a brand — build influence.',
     features: [
       {
         name: 'We Tell Your Story',

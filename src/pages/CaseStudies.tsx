@@ -160,9 +160,9 @@ const CaseStudies = () => {
       {/* Hero Section */}
 
       {/* Case Studies Grid */}
-      <section className="bg-white md:py-32 py-10">
-        <div className='max-w-7xl px-4 sm:px-6 lg:px-8 mb-12 mx-auto '>
-          <div className='flex md:flex-row justify-around mx-auto md:gap-24 gap-5 items-center mt-20 flex-col'>
+      <section className="bg-white md:py-24 py-10">
+        <div className='max-w-7xl px-4 sm:px-6 lg:px-8 mb-0 mx-auto '>
+          <div className='flex md:flex-row justify-around mx-auto md:gap-24 gap-5 items-center mt-6 flex-col'>
             <h1 className='text-black text-8xl font-bold'>Works <br /> <span className='text-8xl font-thin'></span></h1>
            <p className='max-w-2xl'>Each project represents a strategic challenge solved through insight, clarity, and execution. Our work spans brand creation, transformation, and growth built to deliver relevance, consistency, and long term impact.</p>
           </div>
@@ -170,17 +170,331 @@ const CaseStudies = () => {
       </section>
 
 
+<section className="bg-gray-100 py-16">
+  <div className="max-w-7xl mx-auto px-6">
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">    
+
+     {/* CARD START 1*/}
+      <div className="border-[6px] border-black bg-black">
+
+  {/* Image */}
+  <div className="w-full">
+    <img
+      src={chickengarammeat}
+      alt="Telugufoods"
+      className="
+        w-full
+        h-auto               
+        md:h-[320px]         
+        object-contain      
+        md:object-cover      
+      "
+    />
+  </div>
+
+  {/* Content */}
+  <div className="
+    bg-black text-white
+    p-5 md:p-8             
+    flex flex-col justify-between
+    min-h-[220px] md:min-h-[280px]  
+  ">
+    <div>
+      <h6 className="text-purple-500 mb-4 md:mb-6 text-sm md:text-base">
+        Brand Consulting | Digital Media
+      </h6>
+
+      <p className="text-base md:text-xl leading-relaxed">
+        A legacy brand known for delivering the true taste of South India
+        through its premium range of traditional snacks and spice blends.
+      </p>
+    </div>
+
+    <Link to="/case-studies/telugu-foods" className="mt-6 md:mt-8">
+      <ArrowRight className="w-12 h-12 md:w-14 md:h-14 bg-purple-600 p-3 md:p-4 rounded-full" />
+    </Link>
+  </div>
+
+      </div>
+    {/* CARD END */}
+
+
+      {/* CARD START 2*/}
+       <div className="border-[6px] border-black bg-black">
+
+  {/* Image */}
+  <div className="w-full">
+    <img
+      src={suryacolorone}
+      alt="Surya Color One"
+      className="
+        w-full
+        h-auto               
+        md:h-[320px]         
+        object-contain      
+        md:object-cover      
+      "
+    />
+  </div>
+
+  {/* Content */}
+  <div className="
+    bg-black text-white
+    p-5 md:p-8             
+    flex flex-col justify-between
+    min-h-[220px] md:min-h-[280px]  
+  ">
+    <div>
+      <h6 className="text-purple-500 mb-4 md:mb-6 text-sm md:text-base">
+        Brand Consulting
+      </h6>
+
+      <p className="text-base md:text-xl leading-relaxed">
+        A heritage paint brand dedicated to
+bringing walls to life through rich colours, smooth finishes, and a deep understanding of Indian homes and spaces.
+      </p>
+    </div>
+
+    <Link to="/case-studies/surya-colors" className="mt-6 md:mt-8">
+      <ArrowRight className="w-12 h-12 md:w-14 md:h-14 bg-purple-600 p-3 md:p-4 rounded-full" />
+    </Link>
+  </div>
+
+      </div>
+      {/* CARD END */}
+
+      {/* CARD START 3*/}
+       <div className="border-[6px] border-black bg-black">
+
+  {/* Image */}
+  <div className="w-full">
+    <img
+      src={triplexthree}
+      alt="Triplex Three"
+      className="
+        w-full
+        h-auto               
+        md:h-[320px]         
+        object-contain      
+        md:object-cover      
+      "
+    />
+  </div>
+
+  {/* Content */}
+  <div className="
+    bg-black text-white
+    p-5 md:p-8             
+    flex flex-col justify-between
+    min-h-[220px] md:min-h-[280px]  
+  ">
+    <div>
+      <h6 className="text-purple-500 mb-4 md:mb-6 text-sm md:text-base">
+         Digital Media
+      </h6>
+
+      <p className="text-base md:text-xl leading-relaxed">
+        A powerful detergent brand engineered to deliver deep cleaning and long-lasting freshness, trusted for tackling tough stains in everyday laundry.
+      </p>
+    </div>
+
+    <Link to="/case-studies/triplex" className="mt-6 md:mt-8">
+      <ArrowRight className="w-12 h-12 md:w-14 md:h-14 bg-purple-600 p-3 md:p-4 rounded-full" />
+    </Link>
+  </div>
+
+      </div>
+      {/* CARD END */}
+      
+      
+      {/* CARD START 4*/}
+      <div className="border-[6px] border-black bg-black">
+
+  {/* Image */}
+  <div className="w-full">
+    <img
+      src={vsbthree}
+      alt="VSB Three"
+      className="
+        w-full
+        h-auto               
+        md:h-[320px]         
+        object-contain      
+        md:object-cover      
+      "
+    />
+  </div>
+
+  {/* Content */}
+  <div className="
+    bg-black text-white
+    p-5 md:p-8             
+    flex flex-col justify-between
+    min-h-[220px] md:min-h-[280px]  
+  ">
+    <div>
+      <h6 className="text-purple-500 mb-4 md:mb-6 text-sm md:text-base">
+        Brand Consulting | Digital Media
+      </h6>
+
+      <p className="text-base md:text-xl leading-relaxed">
+        A leading stone and surfaces brand specializing in premium granite solutions for modern kitchens, flooring, and architectural spaces.
+      </p>
+    </div>
+
+    <Link to="/case-studies/vsb-group" className="mt-6 md:mt-8">
+      <ArrowRight className="w-12 h-12 md:w-14 md:h-14 bg-purple-600 p-3 md:p-4 rounded-full" />
+    </Link>
+  </div>
+
+      </div>
+      {/* CARD END */}
+
+
+       {/* CARD START 5*/}
+      <div className="border-[6px] border-black bg-black">
+
+  {/* Image */}
+  <div className="w-full">
+    <img
+      src={zavainethree}
+      alt="Zavainethree"
+      className="
+        w-full
+        h-auto               
+        md:h-[320px]         
+        object-contain      
+        md:object-cover      
+      "
+    />
+  </div>
+
+  {/* Content */}
+  <div className="
+    bg-black text-white
+    p-5 md:p-8             
+    flex flex-col justify-between
+    min-h-[220px] md:min-h-[280px]  
+  ">
+    <div>
+      <h6 className="text-purple-500 mb-4 md:mb-6 text-sm md:text-base">
+        Digital Media
+      </h6>
+
+      <p className="text-base md:text-xl leading-relaxed">
+        An innovative laundry care brand introducing India’s first detergent tablets, designed for precise dosing, powerful cleaning, and modern washing machines.
+      </p>
+    </div>
+
+    <Link to="/case-studies/zavaine" className="mt-6 md:mt-8">
+      <ArrowRight className="w-12 h-12 md:w-14 md:h-14 bg-purple-600 p-3 md:p-4 rounded-full" />
+    </Link>
+  </div>
+
+      </div>
+      {/* CARD END */}
+
+      {/* CARD START 6*/}
+       <div className="border-[6px] border-black bg-black">
+
+  {/* Image */}
+  <div className="w-full">
+    <img
+      src={levelupkhammam}
+      alt="LevelUp Khammam"
+      className="
+        w-full
+        h-auto               
+        md:h-[320px]         
+        object-contain      
+        md:object-cover      
+      "
+    />
+  </div>
+
+  {/* Content */}
+  <div className="
+    bg-black text-white
+    p-5 md:p-8             
+    flex flex-col justify-between
+    min-h-[220px] md:min-h-[280px]  
+  ">
+    <div>
+      <h6 className="text-purple-500 mb-4 md:mb-6 text-sm md:text-base">
+        Brand Consulting
+      </h6>
+
+      <p className="text-base md:text-xl leading-relaxed">
+        A fashion retail brand offering stylish, accessible clothing that blends current trends with everyday wearability.
+      </p>
+    </div>
+
+    <Link to="/case-studies/lvl-up" className="mt-6 md:mt-8">
+      <ArrowRight className="w-12 h-12 md:w-14 md:h-14 bg-purple-600 p-3 md:p-4 rounded-full" />
+    </Link>
+  </div>
+
+      </div>
+      {/* CARD END */}
+
+      {/* CARD START 7*/}
+      <div className="border-[6px] border-black bg-black">
+
+  {/* Image */}
+  <div className="w-full">
+    <img
+      src={tenalidoublehorseuradgota}
+      alt="tenalidoublehorse"
+      className="
+        w-full
+        h-auto               
+        md:h-[320px]         
+        object-contain      
+        md:object-cover      
+      "
+    />
+  </div>
+
+  {/* Content */}
+  <div className="
+    bg-black text-white
+    p-5 md:p-8             
+    flex flex-col justify-between
+    min-h-[220px] md:min-h-[280px]  
+  ">
+    <div>
+      <h6 className="text-purple-500 mb-4 md:mb-6 text-sm md:text-base">
+      Digital Media
+      </h6>
+
+      <p className="text-base md:text-xl leading-relaxed">
+        A trusted household name known for delivering purity and consistency through its wide range of premium pulses and essential staples.
+      </p>
+    </div>
+
+    <Link to="/case-studies/tenali-double-horse" className="mt-6 md:mt-8">
+      <ArrowRight className="w-12 h-12 md:w-14 md:h-14 bg-purple-600 p-3 md:p-4 rounded-full" />
+    </Link>
+  </div>
+
+      </div>
+      {/* CARD END */}
+      
+
+    </div>
+  </div>
+</section>
 
 
 
+{/* <section className='max-w-8xl'>
+  <div className='py-2 bg-white sm:px-4 lg:px-11'>
 
-<section className='max-w-8xl'>
-  <div className='py-20 bg-black sm:px-4 lg:px-11'>
-
-    {/* 1 */}
+   
     <div className='grid grid-cols-1 md:grid-cols-2 gap-0'>
       
-      {/* IMAGE FIRST on MOBILE */}
+    
       <div className='order-1 md:order-2 w-full'>
         <img 
           src={chickengarammeat} 
@@ -189,10 +503,10 @@ const CaseStudies = () => {
         />
       </div>
 
-      {/* CONTENT SECOND on MOBILE */}
+    
       <div className='order-2 md:order-1 my-auto px-5'>
-        <h6 className='text-purple-400 mb-7'>Brand Consulting | Digital Media</h6>
-        <p className='text-white text-2xl'>
+        <h6 className='text-purple-600 mb-7'>Brand Consulting | Digital Media</h6>
+        <p className='text-black text-2xl'>
           A legacy brand known for delivering <br /> 
           the true taste of South India through its premium <br /> 
           range of traditional snacks and spice blends.
@@ -203,7 +517,7 @@ const CaseStudies = () => {
       </div>
     </div>
 
-    {/* 2 */}
+   
     <div className='grid grid-cols-1 md:grid-cols-2 gap-0 md:mt-0 mt-16'>
 
       <div className='order-1 md:order-1 w-full'>
@@ -215,8 +529,8 @@ const CaseStudies = () => {
       </div>
 
       <div className='order-2 md:order-2 my-auto mx-0 md:mx-14 px-5'>
-        <h6 className='text-purple-400 mb-7'>Brand Consulting</h6>
-        <p className='text-white text-2xl'>
+        <h6 className='text-purple-600 mb-7'>Brand Consulting</h6>
+        <p className='text-black text-2xl'>
           A heritage paint brand dedicated to <br />
           bringing walls to life through rich colours, smooth finishes, 
           and a deep understanding of Indian homes and spaces.
@@ -227,7 +541,124 @@ const CaseStudies = () => {
       </div>
     </div>
 
-    {/* 3 */}
+    
+    
+
+    
+    <div className='grid grid-cols-1 md:grid-cols-2 gap-0 md:mt-0 mt-16'>
+      <div className='order-1 md:order-2 w-full'>
+        <img 
+          src={triplexthree} 
+          alt="triplex"  
+          className='w-full h-auto md:h-[320px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
+        />
+      </div>
+
+      <div className='order-2 md:order-1 my-auto px-5'>
+        <h6 className='text-purple-600 mb-7'>Digital Media</h6>
+        <p className='text-black text-2xl'>
+          A powerful detergent brand engineered to deliver deep cleaning 
+          and long-lasting freshness, trusted for tackling tough stains in everyday laundry.
+        </p>
+        <Link to={`/case-studies/triplex`} className='mt-5 flex items-center gap-2'>
+          <ArrowRight className="w-16 h-16 text-white bg-purple-500 rounded-full p-5" />
+        </Link>
+      </div>
+    </div>
+
+
+   
+    <div className='grid grid-cols-1 md:grid-cols-2 gap-0 md:mt-0 mt-16'>
+      <div className='order-1 md:order-1 w-full'>
+        <img 
+          src={vsbthree} 
+          alt="vsbgroup"  
+          className='w-full h-auto md:h-[320px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
+        />
+      </div>
+
+      <div className='order-2 md:order-2 my-auto mx-0 md:mx-14 px-5'>
+        <h6 className='text-purple-600 mb-7'>Brand Consulting | Digital Media </h6>
+        <p className='text-black text-2xl'>
+          A leading stone and surfaces brand specializing in premium granite solutions 
+          for modern kitchens, flooring, and architectural spaces.
+        </p>
+        <Link to={`/case-studies/vsb-group`} className='mt-5 flex items-center gap-2'>
+          <ArrowRight className="w-16 h-16 text-white bg-purple-500 rounded-full p-5" />
+        </Link>
+      </div>
+    </div>
+
+  
+    <div className='grid grid-cols-1 md:grid-cols-2 gap-0 md:mt-0 mt-16'>
+      <div className='order-1 md:order-2 w-full'>
+        <img 
+          src={zavainethree} 
+          alt="zavaine"  
+          className='w-full h-auto md:h-[320px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
+        />
+      </div>
+
+      <div className='order-2 md:order-1 my-auto mx-0 md:mx-14 px-5'>
+        <h6 className='text-purple-600 mb-7'>Digital Media</h6>
+        <p className='text-black text-2xl'>
+          An innovative laundry care brand introducing India’s first detergent tablets, 
+          designed for precise dosing, powerful cleaning, and modern washing machines.
+        </p>
+        <Link to={`/case-studies/zavaine`} className='mt-5 flex items-center gap-2'>
+          <ArrowRight className="w-16 h-16 text-white bg-purple-500 rounded-full p-5" />
+        </Link>
+      </div>
+    </div>
+
+     <div className='grid grid-cols-1 md:grid-cols-2 gap-0 md:mt-0 mt-16'>
+
+      <div className='order-1 md:order-1 w-full'>
+        <img 
+          src={levelupkhammam} 
+          alt="lvlup" 
+          className='w-full h-auto md:h-[320px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
+        />
+      </div>
+
+      <div className='order-2 md:order-2 my-auto mx-0 md:mx-14 px-5'>
+        <h6 className='text-purple-600 mb-7'>Brand Consulting</h6>
+        <p className='text-black text-2xl'>
+          A fashion retail brand offering stylish, accessible clothing that blends current trends with everyday wearability.
+        </p>
+        <Link to={`/case-studies/lvl-up`} className='mt-5 flex items-center gap-2'>
+          <ArrowRight className="w-16 h-16 text-white bg-purple-500 rounded-full p-5" />
+        </Link>
+      </div>
+    </div>
+
+   <div className='grid grid-cols-1 md:grid-cols-2 gap-0 md:mt-0 mt-16'>
+  <div className='order-1 md:order-2 w-full'>
+    <img 
+      src={tenalidoublehorseuradgota} 
+      alt="tenalidoublehorse" 
+      className='w-full h-auto md:h-[320px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
+    />
+  </div>
+
+  <div className='order-2 md:order-1 my-auto mx-0 md:mx-14 px-5'>
+    <h6 className='text-purple-600 mb-7'>Brand Consulting</h6>
+    <p className='text-black text-2xl'>
+      A trusted household name known for delivering purity and consistency 
+      through its wide range of premium pulses and essential staples.
+    </p>
+    <Link to={`/case-studies/tenali-double-horse`} className='mt-5 flex items-center gap-2'>
+      <ArrowRight className="w-16 h-16 text-white bg-purple-500 rounded-full p-5" />
+    </Link>
+  </div>
+</div>
+
+ </div>
+</section> */}
+
+
+
+{/* 3 */}
     {/* <div className='grid grid-cols-1 md:grid-cols-2 gap-0 md:mt-0 mt-16'>
       <div className='order-1 md:order-2 w-full'>
         <img 
@@ -249,117 +680,6 @@ const CaseStudies = () => {
     </div> */}
 
     {/* 4 */}
-    
-
-    {/* 5 */}
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-0 md:mt-0 mt-16'>
-      <div className='order-1 md:order-2 w-full'>
-        <img 
-          src={triplexthree} 
-          alt="triplex"  
-          className='w-full h-auto md:h-[320px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
-        />
-      </div>
-
-      <div className='order-2 md:order-1 my-auto px-5'>
-        <h6 className='text-purple-400 mb-7'>Digital Media</h6>
-        <p className='text-white text-2xl'>
-          A powerful detergent brand engineered to deliver deep cleaning 
-          and long-lasting freshness, trusted for tackling tough stains in everyday laundry.
-        </p>
-        <Link to={`/case-studies/triplex`} className='mt-5 flex items-center gap-2'>
-          <ArrowRight className="w-16 h-16 text-white bg-purple-500 rounded-full p-5" />
-        </Link>
-      </div>
-    </div>
-
-
-    {/* 6 */}
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-0 md:mt-0 mt-16'>
-      <div className='order-1 md:order-1 w-full'>
-        <img 
-          src={vsbthree} 
-          alt="vsbgroup"  
-          className='w-full h-auto md:h-[320px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
-        />
-      </div>
-
-      <div className='order-2 md:order-2 my-auto mx-0 md:mx-14 px-5'>
-        <h6 className='text-purple-400 mb-7'>Brand Consulting | Digital Media </h6>
-        <p className='text-white text-2xl'>
-          A leading stone and surfaces brand specializing in premium granite solutions 
-          for modern kitchens, flooring, and architectural spaces.
-        </p>
-        <Link to={`/case-studies/vsb-group`} className='mt-5 flex items-center gap-2'>
-          <ArrowRight className="w-16 h-16 text-white bg-purple-500 rounded-full p-5" />
-        </Link>
-      </div>
-    </div>
-
-    {/* 7 */}
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-0 md:mt-0 mt-16'>
-      <div className='order-1 md:order-2 w-full'>
-        <img 
-          src={zavainethree} 
-          alt="zavaine"  
-          className='w-full h-auto md:h-[320px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
-        />
-      </div>
-
-      <div className='order-2 md:order-1 my-auto mx-0 md:mx-14 px-5'>
-        <h6 className='text-purple-400 mb-7'>Digital Media</h6>
-        <p className='text-white text-2xl'>
-          An innovative laundry care brand introducing India’s first detergent tablets, 
-          designed for precise dosing, powerful cleaning, and modern washing machines.
-        </p>
-        <Link to={`/case-studies/zavaine`} className='mt-5 flex items-center gap-2'>
-          <ArrowRight className="w-16 h-16 text-white bg-purple-500 rounded-full p-5" />
-        </Link>
-      </div>
-    </div>
-
-     <div className='grid grid-cols-1 md:grid-cols-2 gap-0 md:mt-0 mt-16'>
-
-      <div className='order-1 md:order-1 w-full'>
-        <img 
-          src={levelupkhammam} 
-          alt="lvlup" 
-          className='w-full h-auto md:h-[320px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
-        />
-      </div>
-
-      <div className='order-2 md:order-2 my-auto mx-0 md:mx-14 px-5'>
-        <h6 className='text-purple-400 mb-7'>Brand Consulting</h6>
-        <p className='text-white text-2xl'>
-          A fashion retail brand offering stylish, accessible clothing that blends current trends with everyday wearability.
-        </p>
-        <Link to={`/case-studies/lvl-up`} className='mt-5 flex items-center gap-2'>
-          <ArrowRight className="w-16 h-16 text-white bg-purple-500 rounded-full p-5" />
-        </Link>
-      </div>
-    </div>
-
-   <div className='grid grid-cols-1 md:grid-cols-2 gap-0 md:mt-0 mt-16'>
-  <div className='order-1 md:order-2 w-full'>
-    <img 
-      src={tenalidoublehorseuradgota} 
-      alt="tenalidoublehorse" 
-      className='w-full h-auto md:h-[320px] object-contain md:object-cover p-4 md:p-0 mx-auto' 
-    />
-  </div>
-
-  <div className='order-2 md:order-1 my-auto mx-0 md:mx-14 px-5'>
-    <h6 className='text-purple-400 mb-7'>Brand Consulting</h6>
-    <p className='text-white text-2xl'>
-      A trusted household name known for delivering purity and consistency 
-      through its wide range of premium pulses and essential staples.
-    </p>
-    <Link to={`/case-studies/tenali-double-horse`} className='mt-5 flex items-center gap-2'>
-      <ArrowRight className="w-16 h-16 text-white bg-purple-500 rounded-full p-5" />
-    </Link>
-  </div>
-</div>
-
 
 
      {/* 8 */}
@@ -514,8 +834,7 @@ const CaseStudies = () => {
       </div>
     </div> */}
 
-  </div>
-</section>
+ 
 
 
 

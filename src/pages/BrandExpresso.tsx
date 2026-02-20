@@ -25,7 +25,7 @@ const serviceData = {
     title: 'Brand ',
     title_two: 'Expresso',
     subtitle: 'Quick, Concentrated Brand Solutions',
-    heroDescription: 'Revitalize your brand in just 90 days with Brand Expresso transforming identity, boosting presence, and standing out boldly in the market!',
+    heroDescription: 'Re-energize your brand in 90 days. We refine your identity, sharpen your presence, and prepare you for a confident, comeback-ready launch.',
     features: [
       {
         name: 'Initial Consultation And Assessment:',

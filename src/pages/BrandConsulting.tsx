@@ -22,7 +22,7 @@ const serviceData = {
     title: 'BRAND',
     title_two: 'CONSULTING',
     subtitle: 'Strategic Partnership for Brand Excellence',
-    heroDescription: 'We work with brands as a true strategic partner, applying rigorous standards and creative ingenuity to build it up',
+    heroDescription: 'We partner with brands as strategic allies, blending sharp thinking with creative firepower to build strong, scalable foundations.',
     features: [
       {
         name: 'Brand Strategy',

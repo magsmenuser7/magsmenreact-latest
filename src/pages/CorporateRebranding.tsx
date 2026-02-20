@@ -19,7 +19,7 @@ const serviceData = {
     title: 'Corporate ',
     title_two: 'Rebranding',
     subtitle: 'Changing the way people see',
-    heroDescription: 'We give your brand a refresh to keep up your brand with changes in the marketplace by tweaking your brand’s existing assets.',
+    heroDescription: ' We refresh and realign your brand to keep pace with evolving markets , refining what exists while strengthening what’s next.',
     features: [
       'Research on the rebranding opportunity and challenges for the brand',
       'Revamping the entire identity',

@@ -39,7 +39,7 @@ const services: Service[] = [
     title: "brand consulting",
      slug: "/brand-consulting",
     description:
-      "We work with brands as a true strategic partner, applying rigorous standards and creative ingenuity to build it up.",
+      "We partner with brands as strategic allies, blending sharp thinking with creative firepower to build strong, scalable foundations.",
     leftItems: [
       "Research & Insights",
       "Brand Positioning",
@@ -61,7 +61,7 @@ const services: Service[] = [
     title: "personal brand consulting",
      slug: "/personal-brand-consulting",
     description:
-      "We help an individual understand which platforms are best for their business and how to use them to reach their target audience. Don’t just build a brand..!",
+      " We help individuals identify the right platforms for their goals and craft a powerful presence that connects with the right audience. Don’t just build a brand — build influence.",
     leftItems: ["Positioning", "Narrative", "Platform Strategy"],
     rightItems: ["Visual Identity", "Brand Systems", "Growth Enablement"],
     image:
@@ -75,7 +75,7 @@ const services: Service[] = [
     title: "corporate rebranding",
      slug: "/corporate-rebranding",
     description:
-      "We give your brand a refresh to keep up your brand with changes in the marketplace by tweaking your brand’s existing assets.",
+      "We refresh and realign your brand to keep pace with evolving markets , refining what exists while strengthening what’s next.",
     leftItems: ["Brand Audit", "Identity Evolution", "Narrative Alignment"],
     rightItems: ["Architecture", "Naming", "Brand Governance"],
     image:
@@ -89,7 +89,7 @@ const services: Service[] = [
     title: "brand expresso",
        slug: "/brand-expresso",
     description:
-      "Transform your brand in 90 days with Brand Expresso! We’ll refresh your identity, enhance market presence, and help you stand out for a bold comeback.",
+      "Re-energize your brand in 90 days. We refine your identity, sharpen your presence, and prepare you for a confident, comeback-ready launch.",
     leftItems: ["Rapid Brand Audit", "Identity Refresh", "Core Messaging & Tone"],
     rightItems: ["Visual System Optimisation", "Brand Guidelines", "Launch-Ready Brand Assets"],
     image:
@@ -103,7 +103,7 @@ const services: Service[] = [
     title: "brand creation",
      slug: "/brand-creation",
     description:
-      "Turn your ideas into reality in 90 days with Brand Creation from concept to creation. Because every unique brand deserves a unique approach!",
+      "An idea to a lasting impact in 90 days, we shape distinctive brands with thoughtful strategy and a tailored approach built around your vision.",
     leftItems: ["Brand Strategy & Positioning", "Naming & Brand Foundations", "Visual Identity Design"],
     rightItems: ["Tone of Voice & Messaging", "Brand Systems & Guidelines", "Launch-Ready Brand Assets"],
     image:
@@ -117,7 +117,7 @@ const services: Service[] = [
     title: "link fluence",
     slug: "/link-fluence",
     description:
-      "LinkFluence's Personal Brand Management solution is tailored for top-level executives who want to establish a commanding presence on LinkedIn.",
+      "Designed for top executives, LinkFluence builds a powerful LinkedIn presence that positions you as a credible, consistent thought leader.",
     leftItems: ["LinkedIn Profile Optimisation", "Personal Brand Positioning", "Thought Leadership Strategy"],
     rightItems: ["Content Pillars & Narrative", "Tone of Voice & Messaging", "Visual Direction for LinkedIn"],
     image:
@@ -131,7 +131,7 @@ const services: Service[] = [
     title: "launchpad",
       slug: "/launchpad",
     description:
-      "We build brands with clarity, confidence, and consistency designed to stand out and scale over time.",
+      "We craft brands with clarity, confidence, and cohesion,  built to stand out today and scale tomorrow.",
     leftItems: ["Strategy", "Positioning", "Identity"],
     rightItems: ["Voice", "Systems", "Launch Toolkit"],
     image:
@@ -162,7 +162,7 @@ export default function ServicesPage() {
       >
         <div className="absolute max-w-6xl mx-auto w-full px-6 ">
           <h1 className="text-4xl md:text-6xl leading-tight md:leading-none">
-            From identity to execution, we build <span className="font-bold"> BRANDS </span> that stand out, scale, and stay unforgettable.
+            From figuring out your <span className="font-bold"> WHO </span> to flexing your <span className="font-bold"> WOW </span>we build brands that don’t just exist they stand out, scale up, and stick around.
           </h1>
         </div>
       </section>

@@ -19,7 +19,7 @@ const serviceData = {
     title: 'Link ',
     title_two: 'Fluence',
     subtitle: 'Strategic Networking & Influence Building',
-    heroDescription: "We craft a profile that not just build networks, but a platform of influence.",
+    heroDescription: "Designed for top executives, LinkFluence builds a powerful LinkedIn presence that positions you as a credible, consistent thought leader.",
     features: [
       {
         name: 'Comprehensive Profile Optimization',
