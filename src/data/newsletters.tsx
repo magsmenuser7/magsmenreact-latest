@@ -27,7 +27,7 @@ import branddetox  from "/assets/newsletters/brand-detox.pdf";
 import mibbsbrandcorner  from "/assets/newsletters/mibbs-brand-corner.pdf";
 import indiaisgoldobsessionissplittingintotwo  from "/assets/newsletters/india-is-gold-obsession-is-splitting-into-two.pdf";
 import brandcornertrademarksanddeceptivepractices  from "/assets/newsletters/brand_corner_trademarks_and_deceptive_practices.pdf";
-import FinalBrandpresentationforprinting1  from "/assets/newsletters/Final-Brand-presentation-for-printing-1.pdf";
+import FinalBrandpresentationforprinting1  from "/assets/newsletters/Magsmen-Brand-presentation.pdf";
 
 import WhyYourNicheStrategyIsStallingYourBrand from "/assets/newsletters/why-your-niche-strategy-is-stalling-your-brand.pdf";
 
