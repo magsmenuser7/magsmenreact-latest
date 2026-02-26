@@ -25,7 +25,7 @@ const serviceData = {
     title: 'Brand ',
     title_two: 'Creation',
     subtitle: 'From Concept to Reality',
-    heroDescription: 'Turn your ideas into reality in 90 days with Brand Creation from concept to creation. Because every unique brand deserves a unique approach!',
+    heroDescription: 'An idea to a lasting impact in 90 days, we shape distinctive brands with thoughtful strategy and a tailored approach built around your vision.',
     features: [
       {
         name: 'Brand Discovery:',

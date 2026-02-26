@@ -1,20 +1,19 @@
 import React, { FormEvent, useState } from 'react';
-import { 
-  ArrowRight, 
-  ShieldCheck, 
-  Target, 
-  BarChart3, 
-  Users, 
-  Compass, 
-  Map, 
-  CheckCircle2, 
+import {
+  ArrowRight,
+  ShieldCheck,
+  Target,
+  BarChart3,
+  Users,
+  Compass,
+  Map,
+  CheckCircle2,
   TrendingUp,
   Briefcase,
   ChevronRight,
   ChevronLeft,
   LayoutDashboard,
   Mail,
-  Lock,
   AlertCircle,
   Loader2
 } from 'lucide-react';
@@ -22,7 +21,6 @@ import emailjs from '@emailjs/browser';
 
 interface UserData {
   email: string;
-  password: string;
 }
 
 const MagsmenStrategicProposal = () => {
@@ -34,21 +32,20 @@ const MagsmenStrategicProposal = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
 
-  // ================= USER STORAGE LOGIC =================
+  // ================= USER STORAGE =================
 
   const getUsers = (): UserData[] => {
     return JSON.parse(localStorage.getItem('registeredUsers') || '[]');
   };
 
-  const saveUserToLocalStorage = (user: UserData): void => {
+  const saveUser = (user: UserData): void => {
     const users = getUsers();
     users.push(user);
     localStorage.setItem('registeredUsers', JSON.stringify(users));
   };
 
-  const findUserByEmail = (email: string): UserData | undefined => {
-    const users = getUsers();
-    return users.find((u) => u.email === email);
+  const findUser = (email: string): UserData | undefined => {
+    return getUsers().find((u) => u.email === email);
   };
 
   
@@ -56,73 +53,128 @@ const MagsmenStrategicProposal = () => {
 const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
-  setError('');
-  setSuccessMessage('');
-  setIsLoading(true);
+    setError('');
+    setSuccessMessage('');
+    setIsLoading(true);
 
-  const formData = new FormData(e.currentTarget);
-  const email = (formData.get('email') as string)?.trim();
-  const password = (formData.get('password') as string)?.trim();
+    const formData = new FormData(e.currentTarget);
+    const email = (formData.get('email') as string)?.trim();
 
-  if (!email || !password) {
-    setError('Please enter both email and password.');
-    setIsLoading(false);
-    return;
-  }
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  if (!emailRegex.test(email)) {
-    setError('Please enter a valid email address.');
-    setIsLoading(false);
-    return;
-  }
-
-  const existingUser = findUserByEmail(email);
-
-  // ================= EXISTING USER =================
-  if (existingUser) {
-
-    if (existingUser.password !== password) {
-      setError('Incorrect password.');
+    if (!email) {
+      setError('Please enter your email address.');
       setIsLoading(false);
       return;
     }
 
-    // ✅ NO EMAIL SENT HERE
-    setSuccessMessage('👋 Welcome back!');
-    setTimeout(() => setIsLoggedIn(true), 800);
-    setIsLoading(false);
-    return;
-  }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError('Please enter a valid email address.');
+      setIsLoading(false);
+      return;
+    }
 
-  // ================= NEW USER =================
-  try {
+    const existingUser = findUser(email);
 
-    // ✅ EMAIL SENT ONLY FIRST TIME
-    await emailjs.send(
-      'service_ztfkvtu',
-      'template_zhvk3r4',
-      { email, password },
-      'lGEySRjC5bz4G2JLr'
+    if (existingUser) {
+      setSuccessMessage('Welcome back.');
+      setTimeout(() => setIsLoggedIn(true), 800);
+      setIsLoading(false);
+      return;
+    }
+
+    try {
+      await emailjs.send(
+        'service_ztfkvtu',
+        'template_zhvk3r4',
+        { email },
+        'lGEySRjC5bz4G2JLr'
+      );
+
+      saveUser({ email });
+
+      setSuccessMessage('Registered successfully.');
+      setTimeout(() => setIsLoggedIn(true), 1000);
+
+    } catch (err) {
+      setError('Registration failed. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // ================= LOGIN SCREEN =================
+
+  if (!isLoggedIn) {
+    return (
+      <div className="min-h-screen bg-slate-100 flex items-center justify-center p-6 font-sans">
+        <div className="w-full max-w-md bg-white rounded-3xl shadow-xl p-8 border border-slate-200">
+
+          <div className="flex flex-col items-center mb-8 text-center">
+            <div className="p-4 bg-slate-100 rounded-2xl mb-4 text-[#1E293B]">
+              <LayoutDashboard className="w-8 h-8" />
+            </div>
+            <h1 className="text-xl font-bold text-[#1E293B] uppercase">
+              Strategic Dashboard
+            </h1>
+            <p className="text-slate-500 text-sm mt-2">
+              Enter your email to access
+            </p>
+          </div>
+
+          <form onSubmit={handleLogin} className="space-y-6">
+
+            <div>
+              <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                Email
+              </label>
+              <div className="relative mt-2">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#1E293B]/20"
+                  placeholder="example@email.com"
+                />
+              </div>
+            </div>
+
+            {error && (
+              <div className="flex items-center gap-2 text-red-500 bg-red-50 p-3 rounded-xl text-xs">
+                <AlertCircle className="w-4 h-4" />
+                {error}
+              </div>
+            )}
+
+            {successMessage && (
+              <div className="text-green-600 bg-green-50 p-3 rounded-xl text-xs">
+                {successMessage}
+              </div>
+            )}
+
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="w-full bg-[#1E293B] text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2"
+            >
+              {isLoading ? (
+                <Loader2 className="w-5 h-5 animate-spin" />
+              ) : (
+                <>
+                  Access Dashboard
+                  <ChevronRight className="w-4 h-4" />
+                </>
+              )}
+            </button>
+          </form>
+        </div>
+      </div>
     );
-
-    saveUserToLocalStorage({ email, password });
-
-    setSuccessMessage('✅ Registered successfully!');
-    setTimeout(() => setIsLoggedIn(true), 1000);
-
-  } catch (err) {
-    console.error(err);
-    setError('⚠️ Registration failed. Please try again.');
-  } finally {
-    setIsLoading(false);
   }
-};
 
-
-
-  // ================= SLIDE NAVIGATION =================
+  // ================= MAIN SLIDES =================
 
   const totalSlides = 7;
 
@@ -134,102 +186,9 @@ const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
     if (activeSlide > 0) setActiveSlide(activeSlide - 1);
   };
 
-  // ================= LOGIN SCREEN =================
-
-  if (!isLoggedIn) {
-    return (
-      <div className="min-h-screen bg-slate-100 flex items-center justify-center p-6 font-sans md:pt-28">
-        <div className="w-full max-w-md bg-white rounded-[2rem] shadow-xl p-10 border border-slate-200">
-
-          <div className="flex flex-col items-center mb-8">
-            <div className="p-4 bg-slate-100 rounded-2xl mb-4 text-[#1E293B]">
-              <LayoutDashboard className="w-8 h-8" />
-            </div>
-            <h1 className="text-2xl font-black text-[#1E293B] uppercase tracking-tight text-center">
-              Strategic Dashboard
-            </h1>
-            <p className="text-slate-500 text-sm mt-2 font-medium text-center">
-              Enter your details to access the platform
-            </p>
-          </div>
-
-          <form onSubmit={handleLogin} className="space-y-6">
-
-            {/* Email Field */}
-            <div className="space-y-2">
-              <label className="text-[11px] font-black text-slate-400 uppercase tracking-wider pl-1">
-                Email
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <input 
-                  type="email" 
-                  name="email"
-                  required 
-                  className="w-full pl-12 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1E293B]/20 focus:border-[#1E293B] font-semibold"
-                  placeholder="example@email.com"
-                />
-              </div>
-            </div>
-
-            {/* Password Field */}
-            <div className="space-y-2">
-              <label className="text-[11px] font-black text-slate-400 uppercase tracking-wider pl-1">
-                Password
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400">
-                  <Lock className="w-5 h-5" />
-                </div>
-                <input 
-                  type="password" 
-                  name="password"
-                  required 
-                  className="w-full pl-12 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1E293B]/20 focus:border-[#1E293B] font-semibold"
-                  placeholder="Enter password"
-                />
-              </div>
-            </div>
-
-            {error && (
-              <div className="flex items-center gap-2 text-red-500 bg-red-50 p-3 rounded-xl border border-red-100">
-                <AlertCircle className="w-4 h-4" />
-                <p className="text-[12px] font-bold">{error}</p>
-              </div>
-            )}
-
-            {successMessage && (
-              <div className="flex items-center gap-2 text-green-600 bg-green-50 p-3 rounded-xl border border-green-200">
-                <p className="text-[12px] font-bold">{successMessage}</p>
-              </div>
-            )}
-
-            <button 
-              type="submit"
-              disabled={isLoading}
-              className="w-full bg-[#1E293B] text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2"
-            >
-              {isLoading ? (
-                <Loader2 className="w-5 h-5 animate-spin" />
-              ) : (
-                <>
-                  <span>Access Dashboard</span>
-                  <ChevronRight className="w-4 h-4" />
-                </>
-              )}
-            </button>
-
-          </form>
-        </div>
-      </div>
-    );
-  }
-
-  // ================= MAIN SLIDE DASHBOARD =================
-
-// Content Data
+  // ⚠️ YOUR ENTIRE SLIDE CONTENT REMAINS EXACTLY SAME
+  // Only layout wrappers updated below for responsiveness
+  // Content Data
   const modules = [
     {
       title: "Module 1: Regulatory & Compliance Baseline Audit",
@@ -362,79 +321,176 @@ const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
   ];
 
   // Components for Slides
-  const CoverSlide = () => (
-    <div className="h-full flex flex-col justify-center items-start px-12 bg-zinc-900 text-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-64 h-full bg-zinc-800 opacity-20 transform skew-x-12 translate-x-12"></div>
-      <div className="z-10">
-        <h3 className="text-zinc-400 tracking-[0.3em] text-sm font-semibold mb-4">MAGSMEN BRAND CONSULTANTS</h3>
-        <h1 className="text-6xl font-bold leading-tight mb-6">
-          BRAND <span className="text-amber-500">EXPRESSO</span>
-        </h1>
-        <p className="text-2xl font-light text-zinc-300 max-w-2xl border-l-4 border-amber-500 pl-6 py-2">
+ const CoverSlide = () => (
+  <div className="w-full h-full bg-zinc-900 text-white relative overflow-hidden flex flex-col md:flex-row md:items-center">
+
+    {/* Background Accent */}
+    <div className="absolute top-0 right-0 w-40 md:w-64 h-full bg-zinc-800 opacity-20 transform skew-x-12 translate-x-12 pointer-events-none"></div>
+
+    {/* Content Wrapper */}
+    <div className="relative z-10 w-full max-w-5xl px-6 md:px-16 pt-16 md:pt-0 pb-20 md:pb-0">
+
+      {/* Top Label */}
+      <h3 className="text-[11px] md:text-xs text-zinc-400 tracking-[0.35em] font-semibold mb-6 md:mb-8">
+        MAGSMEN BRAND CONSULTANTS
+      </h3>
+
+      {/* Main Heading */}
+      <h1 className="font-bold leading-tight mb-8 md:mb-10">
+        <span className="block text-4xl sm:text-5xl md:text-6xl text-white">
+          BRAND
+        </span>
+        <span className="block text-4xl sm:text-5xl md:text-6xl text-amber-500">
+          EXPRESSO
+        </span>
+      </h1>
+
+      {/* Tagline */}
+      <div className="flex items-start space-x-4 md:space-x-6 mb-8">
+        <div className="w-1 h-14 md:h-16 bg-amber-500 mt-1"></div>
+        <p className="text-lg sm:text-xl md:text-2xl text-zinc-300 leading-snug max-w-2xl">
           Complete Brand, Market & Commercial Structuring Intervention
         </p>
-        <div className="mt-8 text-xs text-zinc-500 uppercase tracking-widest">
-            A Division of Grofessors Innovations Private Limited
-        </div>
-        <div className="mt-12 flex space-x-8 text-sm tracking-widest text-zinc-400">
-          <span>CLEAR VISION</span>
-          <span>•</span>
-          <span>CALM APPROACH</span>
-          <span>•</span>
-          <span>BOLD MOVES</span>
-        </div>
       </div>
+
+      {/* Subtext */}
+      <div className="text-[10px] md:text-[11px] text-zinc-500 uppercase tracking-widest mb-10 md:mb-12">
+        A Division of Grofessors Innovations Private Limited
+      </div>
+
+      {/* Bottom Traits */}
+      <div className="flex flex-wrap gap-x-6 gap-y-3 md:gap-8 text-xs md:text-sm tracking-widest text-zinc-400">
+        <span>CLEAR VISION</span>
+        <span className="hidden md:inline">•</span>
+        <span>CALM APPROACH</span>
+        <span className="hidden md:inline">•</span>
+        <span>BOLD MOVES</span>
+      </div>
+
     </div>
-  );
+  </div>
+);
+
+
 
   const ContextSlide = () => (
-    <div className="h-full px-12 py-8 bg-zinc-50 flex flex-col justify-center">
-      <h2 className="text-3xl font-bold text-zinc-900 mb-6">Project Context & Business Reality</h2>
-      <div className="grid grid-cols-2 gap-8 text-sm">
-        <div className="space-y-4">
-          <div>
-            <h3 className="text-base font-semibold text-amber-700 mb-2">Category Drivers</h3>
-            <p className="text-zinc-600">The Ayurvedic healthcare category is no longer driven by product novelty. It is driven by:</p>
-            <ul className="list-disc list-inside text-zinc-700 ml-2 mt-1 space-y-1">
-                <li>Distribution power</li>
-                <li>Regulatory compliance</li>
-                <li>Perceived trust</li>
-                <li>Brand memory</li>
-                <li>Margin structure</li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-base font-semibold text-amber-700 mb-2">OTC Healthcare Realities</h3>
-            <ul className="space-y-2 text-zinc-700">
-                <li className="flex items-start"><span className="mr-2 text-amber-600">•</span>Consumers buy based on familiarity and habit.</li>
-                <li className="flex items-start"><span className="mr-2 text-amber-600">•</span>Retail pharmacists influence purchase decisions.</li>
-                <li className="flex items-start"><span className="mr-2 text-amber-600">•</span>Brand recall matters more than ingredient listing.</li>
-                <li className="flex items-start"><span className="mr-2 text-amber-600">•</span>Price sensitivity exists in mass segments.</li>
-                <li className="flex items-start"><span className="mr-2 text-amber-600">•</span>Claims are highly scrutinized under regulatory frameworks.</li>
-            </ul>
-          </div>
+  <div className="h-full px-6 md:px-12 py-10 md:py-8 bg-zinc-50 flex flex-col justify-start md:justify-center">
+    
+    <h2 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-8">
+      Project Context & Business Reality
+    </h2>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8 text-sm md:text-base">
+
+      {/* LEFT SECTION */}
+      <div className="space-y-8">
+
+        {/* Category Drivers */}
+        <div>
+          <h3 className="text-sm md:text-base font-semibold text-amber-700 mb-3">
+            Category Drivers
+          </h3>
+
+          <p className="text-zinc-600 mb-3">
+            The Ayurvedic healthcare category is no longer driven by product novelty. It is driven by:
+          </p>
+
+          <ul className="list-disc list-inside text-zinc-700 space-y-2">
+            <li>Distribution power</li>
+            <li>Regulatory compliance</li>
+            <li>Perceived trust</li>
+            <li>Brand memory</li>
+            <li>Margin structure</li>
+          </ul>
         </div>
-        
-        <div className="bg-zinc-900 p-6 rounded-lg shadow-xl text-white flex flex-col justify-center">
-          <h3 className="text-lg font-semibold text-amber-500 mb-4">The Strategic Risk</h3>
-          <p className="mb-4 opacity-90">For a growing brand, the biggest risk is not competition. It is <span className="font-bold">capital spent before clarity.</span></p>
-          <div className="space-y-2 mb-6">
-            <p className="font-semibold text-zinc-400 text-xs uppercase tracking-widest">The Biggest Risks:</p>
-            <ul className="grid grid-cols-1 gap-2">
-                <li className="flex items-center space-x-2"><div className="w-1.5 h-1.5 bg-red-500 rounded-full"></div><span>Weak Positioning</span></li>
-                <li className="flex items-center space-x-2"><div className="w-1.5 h-1.5 bg-red-500 rounded-full"></div><span>Compliance Gaps</span></li>
-                <li className="flex items-center space-x-2"><div className="w-1.5 h-1.5 bg-red-500 rounded-full"></div><span>Wrong Channel Strategy</span></li>
-                <li className="flex items-center space-x-2"><div className="w-1.5 h-1.5 bg-red-500 rounded-full"></div><span>Poor Differentiation Logic</span></li>
-            </ul>
-          </div>
-          <div className="pt-4 border-t border-zinc-700">
-            <p className="italic font-light text-sm">"Brand Expresso is designed to remove structural confusion before scale. This is not a branding exercise. This is a commercial structuring intervention."</p>
-          </div>
+
+        {/* OTC Realities */}
+        <div>
+          <h3 className="text-sm md:text-base font-semibold text-amber-700 mb-3">
+            OTC Healthcare Realities
+          </h3>
+
+          <ul className="space-y-3 text-zinc-700">
+            <li className="flex items-start">
+              <span className="mr-2 mt-1 text-amber-600">•</span>
+              <span>Consumers buy based on familiarity and habit.</span>
+            </li>
+
+            <li className="flex items-start">
+              <span className="mr-2 mt-1 text-amber-600">•</span>
+              <span>Retail pharmacists influence purchase decisions.</span>
+            </li>
+
+            <li className="flex items-start">
+              <span className="mr-2 mt-1 text-amber-600">•</span>
+              <span>Brand recall matters more than ingredient listing.</span>
+            </li>
+
+            <li className="flex items-start">
+              <span className="mr-2 mt-1 text-amber-600">•</span>
+              <span>Price sensitivity exists in mass segments.</span>
+            </li>
+
+            <li className="flex items-start">
+              <span className="mr-2 mt-1 text-amber-600">•</span>
+              <span>Claims are highly scrutinized under regulatory frameworks.</span>
+            </li>
+          </ul>
         </div>
       </div>
+
+      {/* RIGHT SECTION */}
+      <div className="bg-zinc-900 p-6 md:p-8 rounded-xl shadow-xl text-white flex flex-col justify-center">
+
+        <h3 className="text-base md:text-lg font-semibold text-amber-500 mb-5">
+          The Strategic Risk
+        </h3>
+
+        <p className="mb-6 text-sm md:text-base opacity-90">
+          For a growing brand, the biggest risk is not competition. It is{" "}
+          <span className="font-bold">capital spent before clarity.</span>
+        </p>
+
+        <div className="space-y-3 mb-8">
+          <p className="font-semibold text-zinc-400 text-xs uppercase tracking-widest">
+            The Biggest Risks:
+          </p>
+
+          <ul className="space-y-3">
+            <li className="flex items-center space-x-3">
+              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+              <span>Weak Positioning</span>
+            </li>
+
+            <li className="flex items-center space-x-3">
+              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+              <span>Compliance Gaps</span>
+            </li>
+
+            <li className="flex items-center space-x-3">
+              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+              <span>Wrong Channel Strategy</span>
+            </li>
+
+            <li className="flex items-center space-x-3">
+              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+              <span>Poor Differentiation Logic</span>
+            </li>
+          </ul>
+        </div>
+
+        <div className="pt-5 border-t border-zinc-700">
+          <p className="italic font-light text-xs md:text-sm leading-relaxed">
+            "Brand Expresso is designed to remove structural confusion before scale.
+            This is not a branding exercise. This is a commercial structuring intervention."
+          </p>
+        </div>
+
+      </div>
     </div>
-  );
+  </div>
+);
+
 
   const ObjectiveSlide = () => (
     <div className="h-full px-16 py-12 bg-white flex flex-col justify-center">
@@ -468,210 +524,418 @@ const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
     </div>
   );
 
-  const ModulesSlide = () => (
-    <div className="h-full px-8 py-6 bg-zinc-50 flex flex-col">
-      <h2 className="text-2xl font-bold text-zinc-900 mb-1">Detailed Intervention Structure</h2>
-      <p className="text-zinc-500 mb-4 text-sm">6 Structured Work Modules over 6-8 Weeks</p>
+ const ModulesSlide = () => (
+  <div className="h-full px-6 md:px-8 py-8 bg-zinc-50 flex flex-col">
 
-      <div className="flex flex-1 gap-6 overflow-hidden">
-        {/* Module Navigation */}
-        <div className="w-1/3 space-y-1 overflow-y-auto pr-2">
+    <h2 className="text-xl md:text-2xl font-bold text-zinc-900 mb-2">
+      Detailed Intervention Structure
+    </h2>
+
+    <p className="text-zinc-500 mb-6 text-sm">
+      6 Structured Work Modules over 6-8 Weeks
+    </p>
+
+    {/* Layout Wrapper */}
+    <div className="flex flex-col md:flex-row flex-1 gap-6 overflow-hidden">
+
+      {/* ================= MOBILE MODULE NAV ================= */}
+      <div className="md:hidden overflow-x-auto pb-2">
+        <div className="flex space-x-3 w-max">
           {modules.map((module, idx) => (
             <button
               key={idx}
               onClick={() => setActiveModule(idx)}
-              className={`w-full text-left p-3 rounded-lg border transition-all duration-300 flex items-center justify-between group ${
-                activeModule === idx 
-                  ? 'bg-zinc-900 text-white border-zinc-900 shadow-md' 
-                  : 'bg-white text-zinc-600 border-zinc-200 hover:bg-zinc-100'
+              className={`px-4 py-2 rounded-full border text-xs whitespace-nowrap transition ${
+                activeModule === idx
+                  ? 'bg-zinc-900 text-white border-zinc-900'
+                  : 'bg-white text-zinc-600 border-zinc-200'
               }`}
             >
-              <div className="flex items-center space-x-3">
-                <span className={`text-xs font-bold ${activeModule === idx ? 'text-amber-500' : 'text-zinc-400'}`}>0{idx + 1}</span>
-                <span className="font-medium text-xs sm:text-sm">{module.title.split(":")[1]}</span>
-              </div>
-              <ChevronRight className={`w-3 h-3 ${activeModule === idx ? 'text-white' : 'text-zinc-300 opacity-0 group-hover:opacity-100'}`} />
+              0{idx + 1}
             </button>
           ))}
         </div>
-
-        {/* Module Content */}
-        <div className="w-2/3 bg-white p-6 rounded-xl border border-zinc-200 shadow-sm flex flex-col overflow-y-auto">
-          <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="p-2 bg-amber-50 rounded-lg text-amber-600">
-                {modules[activeModule].icon}
-              </div>
-              <h3 className="text-xl font-bold text-zinc-800">{modules[activeModule].title.split(":")[1]}</h3>
-            </div>
-            
-            <p className="text-base font-medium text-amber-600 mb-3">{modules[activeModule].tagline}</p>
-            <p className="text-sm text-zinc-600 italic mb-4 border-l-2 border-zinc-300 pl-3">{modules[activeModule].context}</p>
-            
-            <div className="bg-zinc-50 p-4 rounded-lg mb-4">
-              <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider mb-2">Key Actions & Scope</h4>
-              <ul className="space-y-2">
-                {modules[activeModule].actions.map((action, i) => (
-                  <li key={i} className="flex items-start text-xs sm:text-sm text-zinc-700">
-                    <span className="mr-2 mt-1.5 w-1 h-1 bg-zinc-400 rounded-full flex-shrink-0"></span>
-                    {action}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          
-          <div className="bg-zinc-900 text-zinc-100 p-4 rounded-lg mt-auto">
-            <span className="text-amber-500 font-bold text-xs uppercase tracking-widest block mb-1">Outcome</span>
-            <p className="text-xs sm:text-sm">{modules[activeModule].outcome}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
-  const CommercialsSlide = () => (
-    <div className="h-full px-8 py-8 bg-zinc-900 text-white flex flex-col justify-center">
-      <div className="mb-6 text-center">
-        <h2 className="text-2xl font-bold mb-1">Phase 1: Commercial Investment</h2>
-        <p className="text-zinc-400 text-sm">Duration: 6-8 Weeks | Payment: 50% Advance, 50% On Delivery</p>
       </div>
 
-      <div className="grid grid-cols-3 gap-4 items-stretch h-3/4">
-        {pricingOptions.map((opt, idx) => (
-          <div 
-            key={idx} 
-            className="relative p-5 rounded-xl border flex flex-col bg-zinc-900 border-zinc-700"
+      {/* ================= DESKTOP MODULE NAV ================= */}
+      <div className="hidden md:block md:w-1/3 space-y-1 overflow-y-auto pr-2">
+        {modules.map((module, idx) => (
+          <button
+            key={idx}
+            onClick={() => setActiveModule(idx)}
+            className={`w-full text-left p-3 rounded-lg border transition-all duration-300 flex items-center justify-between group ${
+              activeModule === idx
+                ? 'bg-zinc-900 text-white border-zinc-900 shadow-md'
+                : 'bg-white text-zinc-600 border-zinc-200 hover:bg-zinc-100'
+            }`}
           >
-            <div className="mb-4 text-center border-b border-zinc-700 pb-4">
-              <h3 className="text-base font-medium text-zinc-300 mb-1">{opt.title}</h3>
-              <p className="text-xs text-zinc-500 mb-3">{opt.subtitle}</p>
-              <div className="flex items-baseline justify-center text-white">
-                <span className="text-2xl font-bold">{opt.price}</span>
-                <span className="text-[10px] ml-1 text-zinc-400">{opt.tax}</span>
-              </div>
+            <div className="flex items-center space-x-3">
+              <span
+                className={`text-xs font-bold ${
+                  activeModule === idx ? 'text-amber-500' : 'text-zinc-400'
+                }`}
+              >
+                0{idx + 1}
+              </span>
+              <span className="font-medium text-sm">
+                {module.title.split(":")[1]}
+              </span>
             </div>
 
-            <div className="flex-1 space-y-3 overflow-y-auto">
-              {opt.includes.map((item, i) => (
-                <div key={i} className="flex items-start text-xs text-zinc-300">
-                  <CheckCircle2 className="w-3 h-3 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span>{item}</span>
-                </div>
-              ))}
-              {opt.excludes.length > 0 && (
-                <div className="pt-3 border-t border-zinc-700/50 mt-2 space-y-2 opacity-60">
-                  {opt.excludes.map((item, i) => (
-                    <div key={i} className="flex items-start text-[10px] text-zinc-500">
-                      <span className="mr-2 text-zinc-600">x</span>
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-            
-            <div className="mt-4 pt-4 border-t border-zinc-800">
-                <p className="text-[10px] text-zinc-500 text-center uppercase tracking-wider">Select to Proceed</p>
-            </div>
-          </div>
+            <ChevronRight
+              className={`w-3 h-3 ${
+                activeModule === idx
+                  ? 'text-white'
+                  : 'text-zinc-300 opacity-0 group-hover:opacity-100'
+              }`}
+            />
+          </button>
         ))}
       </div>
+
+      {/* ================= MODULE CONTENT ================= */}
+      <div className="w-full md:w-2/3 bg-white p-5 md:p-6 rounded-xl border border-zinc-200 shadow-sm flex flex-col overflow-y-auto">
+
+        <div>
+
+          {/* Header */}
+          <div className="flex items-center space-x-3 mb-4">
+            <div className="p-2 bg-amber-50 rounded-lg text-amber-600">
+              {modules[activeModule].icon}
+            </div>
+
+            <h3 className="text-lg md:text-xl font-bold text-zinc-800">
+              {modules[activeModule].title.split(":")[1]}
+            </h3>
+          </div>
+
+          {/* Tagline */}
+          <p className="text-sm md:text-base font-medium text-amber-600 mb-3">
+            {modules[activeModule].tagline}
+          </p>
+
+          {/* Context */}
+          <p className="text-sm text-zinc-600 italic mb-4 border-l-2 border-zinc-300 pl-3">
+            {modules[activeModule].context}
+          </p>
+
+          {/* Actions */}
+          <div className="bg-zinc-50 p-4 rounded-lg mb-4">
+            <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider mb-3">
+              Key Actions & Scope
+            </h4>
+
+            <ul className="space-y-3">
+              {modules[activeModule].actions.map((action, i) => (
+                <li
+                  key={i}
+                  className="flex items-start text-xs md:text-sm text-zinc-700"
+                >
+                  <span className="mr-2 mt-1.5 w-1 h-1 bg-zinc-400 rounded-full flex-shrink-0"></span>
+                  {action}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+
+        {/* Outcome */}
+        <div className="bg-zinc-900 text-zinc-100 p-4 rounded-lg mt-auto">
+          <span className="text-amber-500 font-bold text-xs uppercase tracking-widest block mb-1">
+            Outcome
+          </span>
+          <p className="text-xs md:text-sm">
+            {modules[activeModule].outcome}
+          </p>
+        </div>
+
+      </div>
+
     </div>
-  );
+  </div>
+);
+
+
+  const CommercialsSlide = () => (
+  <div className="h-full px-6 md:px-8 py-10 bg-zinc-900 text-white flex flex-col">
+
+    {/* Header */}
+    <div className="mb-8 text-center">
+      <h2 className="text-xl md:text-2xl font-bold mb-2">
+        Phase 1: Commercial Investment
+      </h2>
+      <p className="text-zinc-400 text-sm">
+        Duration: 6-8 Weeks | Payment: 50% Advance, 50% On Delivery
+      </p>
+    </div>
+
+    {/* Pricing Grid */}
+    <div className="
+      grid 
+      grid-cols-1 
+      md:grid-cols-3 
+      gap-6 
+      md:gap-4 
+      flex-1
+    ">
+      {pricingOptions.map((opt, idx) => (
+        <div
+          key={idx}
+          className="
+            relative 
+            p-5 
+            rounded-xl 
+            border 
+            flex 
+            flex-col 
+            bg-zinc-900 
+            border-zinc-700
+          "
+        >
+
+          {/* Card Header */}
+          <div className="mb-5 text-center border-b border-zinc-700 pb-4">
+            <h3 className="text-sm md:text-base font-medium text-zinc-300 mb-1">
+              {opt.title}
+            </h3>
+
+            <p className="text-xs text-zinc-500 mb-3">
+              {opt.subtitle}
+            </p>
+
+            <div className="flex items-baseline justify-center text-white">
+              <span className="text-2xl md:text-3xl font-bold">
+                {opt.price}
+              </span>
+              <span className="text-[10px] ml-1 text-zinc-400">
+                {opt.tax}
+              </span>
+            </div>
+          </div>
+
+          {/* Includes */}
+          <div className="flex-1 space-y-3 mb-4">
+            {opt.includes.map((item, i) => (
+              <div key={i} className="flex items-start text-xs md:text-sm text-zinc-300">
+                <CheckCircle2 className="w-3 h-3 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                <span>{item}</span>
+              </div>
+            ))}
+
+            {/* Excludes */}
+            {opt.excludes.length > 0 && (
+              <div className="pt-3 border-t border-zinc-700/50 mt-2 space-y-2 opacity-60">
+                {opt.excludes.map((item, i) => (
+                  <div key={i} className="flex items-start text-[10px] md:text-xs text-zinc-500">
+                    <span className="mr-2 text-zinc-600">x</span>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Footer */}
+          <div className="mt-auto pt-4 border-t border-zinc-800">
+            <p className="text-[10px] text-zinc-500 text-center uppercase tracking-wider">
+              Select to Proceed
+            </p>
+          </div>
+
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 
   const RetainerSlide = () => (
-    <div className="h-full px-12 py-8 bg-zinc-50 flex flex-col justify-center">
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h2 className="text-3xl font-bold text-zinc-900">Phase 2: Brand Guardianship</h2>
-          <p className="text-zinc-500 mt-2">Execution & Stewardship (Starts AFTER Phase 1)</p>
-        </div>
-        <div className="text-right">
-            <h3 className="text-lg font-bold text-zinc-800">Option 4</h3>
-            <p className="text-2xl font-bold text-zinc-900">₹2,00,000 <span className="text-sm font-normal text-zinc-500">/ Month</span></p>
-            <p className="text-xs text-zinc-400">+ GST (12-Month Contract)</p>
-        </div>
+  <div className="h-full px-6 md:px-12 py-10 bg-zinc-50 flex flex-col">
+
+    {/* Header Section */}
+    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
+
+      <div>
+        <h2 className="text-2xl md:text-3xl font-bold text-zinc-900">
+          Phase 2: Brand Guardianship
+        </h2>
+        <p className="text-zinc-500 mt-2 text-sm md:text-base">
+          Execution & Stewardship (Starts AFTER Phase 1)
+        </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-6 h-3/5">
-        <div className="bg-white p-6 rounded-lg shadow-sm border border-zinc-200 flex flex-col">
-          <div className="flex items-center space-x-3 mb-4">
-             <Target className="w-5 h-5 text-amber-600" />
-             <h3 className="text-lg font-bold text-zinc-800">Strategic Brand Consulting</h3>
-          </div>
-          <div className="space-y-4 text-sm text-zinc-600 overflow-y-auto pr-2">
-             <div className="space-y-1">
-                <span className="font-semibold text-zinc-900 block">Purpose & Vision:</span>
-                Defining brand purpose, vision, mission, and values.
-             </div>
-             <div className="space-y-1">
-                <span className="font-semibold text-zinc-900 block">Positioning:</span>
-                Crafting positioning that separates you from competition.
-             </div>
-             <div className="space-y-1">
-                <span className="font-semibold text-zinc-900 block">Audits & Journey:</span>
-                Brand presence audits. Designing customer journeys (promise = experience).
-             </div>
-             <div className="space-y-1">
-                <span className="font-semibold text-zinc-900 block">Internal Alignment & Innovation:</span>
-                Aligning leadership/employees. Supporting new product positioning.
-             </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-6">
-             <div className="bg-white p-5 rounded-lg shadow-sm border border-zinc-200 flex-1">
-                <div className="flex items-center space-x-3 mb-3">
-                    <TrendingUp className="w-5 h-5 text-amber-600" />
-                    <h3 className="text-lg font-bold text-zinc-800">Performance, Legal & Digital</h3>
-                </div>
-                <ul className="space-y-2 text-sm text-zinc-600">
-                    <li><span className="font-semibold text-zinc-900">Performance:</span> Dashboards, Scorecards, Tracking ROI.</li>
-                    <li><span className="font-semibold text-zinc-900">Protection:</span> Reputation Management (risk/crisis), Regulatory Watchdog (ASCI/AYUSH).</li>
-                    <li><span className="font-semibold text-zinc-900">Digital Execution:</span> Link Fluence (Control narrative), Social Media (Content/Design/Posting), Ad Campaigns (Meta/Google A/B Testing), Community Management.</li>
-                </ul>
-             </div>
-        </div>
+      <div className="md:text-right">
+        <h3 className="text-base md:text-lg font-bold text-zinc-800">
+          Option 4
+        </h3>
+        <p className="text-xl md:text-2xl font-bold text-zinc-900">
+          ₹2,00,000{" "}
+          <span className="text-sm font-normal text-zinc-500">
+            / Month
+          </span>
+        </p>
+        <p className="text-xs text-zinc-400">
+          + GST (12-Month Contract)
+        </p>
       </div>
+
     </div>
-  );
 
-  const FinalSlide = () => (
-    <div className="h-full flex flex-col justify-center items-center bg-zinc-900 text-white text-center px-12">
-      <Briefcase className="w-12 h-12 text-amber-500 mb-6" />
-      <h2 className="text-4xl font-bold mb-2">Structure Before Scale.</h2>
-      <p className="text-lg text-zinc-400 max-w-3xl mb-10">
-        "The biggest risk is not competition. It is capital spent before clarity."
-      </p>
-      
-      <div className="grid grid-cols-2 gap-12 text-left max-w-4xl w-full border-t border-zinc-800 pt-8">
-        <div>
-           <h4 className="text-amber-500 font-bold uppercase tracking-widest text-xs mb-4">Deliverables</h4>
-           <ul className="text-zinc-400 space-y-2 text-sm">
-             <li>• Compliance Review Summary</li>
-             <li>• Competitor Benchmarking Document</li>
-             <li>• Product Differentiation Matrix</li>
-             <li>• Target Persona Map</li>
-             <li>• Positioning Blueprint Document</li>
-             <li>• Directional GTM Plan & 90-Day Execution Roadmap</li>
-             <li>• Strategic Presentation Deck</li>
-           </ul>
+    {/* Content Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1">
+
+      {/* Left Card */}
+      <div className="bg-white p-6 rounded-lg shadow-sm border border-zinc-200 flex flex-col">
+        <div className="flex items-center space-x-3 mb-4">
+          <Target className="w-5 h-5 text-amber-600" />
+          <h3 className="text-base md:text-lg font-bold text-zinc-800">
+            Strategic Brand Consulting
+          </h3>
         </div>
-        <div>
-           <h4 className="text-amber-500 font-bold uppercase tracking-widest text-xs mb-4">Business Impact</h4>
-           <ul className="text-zinc-400 space-y-2 text-sm">
-             <li>• Risk Reduction</li>
-             <li>• Margin Protection</li>
-             <li>• Channel Clarity</li>
-             <li>• Communication Consistency</li>
-             <li>• Trust Positioning</li>
-             <li>• Capital Efficiency</li>
-           </ul>
+
+        <div className="space-y-4 text-sm text-zinc-600">
+          <div>
+            <span className="font-semibold text-zinc-900 block">
+              Purpose & Vision:
+            </span>
+            Defining brand purpose, vision, mission, and values.
+          </div>
+
+          <div>
+            <span className="font-semibold text-zinc-900 block">
+              Positioning:
+            </span>
+            Crafting positioning that separates you from competition.
+          </div>
+
+          <div>
+            <span className="font-semibold text-zinc-900 block">
+              Audits & Journey:
+            </span>
+            Brand presence audits. Designing customer journeys (promise = experience).
+          </div>
+
+          <div>
+            <span className="font-semibold text-zinc-900 block">
+              Internal Alignment & Innovation:
+            </span>
+            Aligning leadership/employees. Supporting new product positioning.
+          </div>
         </div>
       </div>
+
+      {/* Right Card */}
+      <div className="bg-white p-6 rounded-lg shadow-sm border border-zinc-200 flex flex-col">
+        <div className="flex items-center space-x-3 mb-4">
+          <TrendingUp className="w-5 h-5 text-amber-600" />
+          <h3 className="text-base md:text-lg font-bold text-zinc-800">
+            Performance, Legal & Digital
+          </h3>
+        </div>
+
+        <ul className="space-y-3 text-sm text-zinc-600">
+          <li>
+            <span className="font-semibold text-zinc-900">
+              Performance:
+            </span>{" "}
+            Dashboards, Scorecards, Tracking ROI.
+          </li>
+
+          <li>
+            <span className="font-semibold text-zinc-900">
+              Protection:
+            </span>{" "}
+            Reputation Management (risk/crisis), Regulatory Watchdog (ASCI/AYUSH).
+          </li>
+
+          <li>
+            <span className="font-semibold text-zinc-900">
+              Digital Execution:
+            </span>{" "}
+            Link Fluence (Control narrative), Social Media (Content/Design/Posting),
+            Ad Campaigns (Meta/Google A/B Testing), Community Management.
+          </li>
+        </ul>
+      </div>
+
     </div>
-  );
+  </div>
+);
+
+
+ const FinalSlide = () => (
+  <div className="h-full bg-zinc-900 text-white flex flex-col px-6 md:px-12 py-12 md:py-0 md:justify-center">
+
+    {/* Icon */}
+    <div className="flex justify-center md:justify-center mb-6">
+      <Briefcase className="w-10 h-10 md:w-12 md:h-12 text-amber-500" />
+    </div>
+
+    {/* Heading */}
+    <h2 className="text-2xl md:text-4xl font-bold text-center mb-3">
+      Structure Before Scale.
+    </h2>
+
+    {/* Quote */}
+    <p className="text-sm md:text-lg text-zinc-400 text-center max-w-2xl mx-auto mb-10 leading-relaxed">
+      "The biggest risk is not competition. It is capital spent before clarity."
+    </p>
+
+    {/* Content Grid */}
+    <div className="
+      grid 
+      grid-cols-1 
+      md:grid-cols-2 
+      gap-10 
+      md:gap-12 
+      text-left 
+      max-w-4xl 
+      mx-auto 
+      w-full 
+      border-t 
+      border-zinc-800 
+      pt-8
+    ">
+
+      {/* Deliverables */}
+      <div>
+        <h4 className="text-amber-500 font-bold uppercase tracking-widest text-xs mb-4">
+          Deliverables
+        </h4>
+
+        <ul className="text-zinc-400 space-y-3 text-sm">
+          <li>• Compliance Review Summary</li>
+          <li>• Competitor Benchmarking Document</li>
+          <li>• Product Differentiation Matrix</li>
+          <li>• Target Persona Map</li>
+          <li>• Positioning Blueprint Document</li>
+          <li>• Directional GTM Plan & 90-Day Execution Roadmap</li>
+          <li>• Strategic Presentation Deck</li>
+        </ul>
+      </div>
+
+      {/* Business Impact */}
+      <div>
+        <h4 className="text-amber-500 font-bold uppercase tracking-widest text-xs mb-4">
+          Business Impact
+        </h4>
+
+        <ul className="text-zinc-400 space-y-3 text-sm">
+          <li>• Risk Reduction</li>
+          <li>• Margin Protection</li>
+          <li>• Channel Clarity</li>
+          <li>• Communication Consistency</li>
+          <li>• Trust Positioning</li>
+          <li>• Capital Efficiency</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+);
+
 
   const slides = [
     <CoverSlide />,
@@ -685,93 +949,51 @@ const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
 
 
 
-  return (
-    <div className="w-full min-h-screen bg-black flex items-center justify-center p-2 sm:p-6 font-sans">
-      
-      <div
-        className="
-          w-full
-          max-w-6xl
-          bg-white
-          rounded-none sm:rounded-xl
-          shadow-2xl
-          flex flex-col
-          h-screen sm:h-[85vh]
-          overflow-hidden
-        "
-      >
 
+return (
+    <div className="w-full h-screen bg-black flex items-center justify-center p-4 font-sans">
+      <div className="w-full max-w-6xl aspect-video bg-white rounded-xl overflow-hidden shadow-2xl relative">
+        
         {/* Slide Content */}
-        <div className="flex-1 overflow-auto">
-          {slides[activeSlide]}
+        <div className="w-full h-full">
+            {slides[activeSlide]}
         </div>
 
         {/* Navigation Bar */}
-        <div
-          className="
-            bg-white
-            border-t
-            p-4
-            flex flex-col sm:flex-row
-            items-center
-            justify-between
-            gap-4
-          "
-        >
+        <div className="absolute bottom-0 w-full bg-transparent p-6 flex justify-between items-center pointer-events-none">
+            <div className="flex space-x-2 pointer-events-auto">
+                {slides.map((_, idx) => (
+                    <div 
+                        key={idx} 
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${activeSlide === idx ? 'bg-amber-500 w-8' : 'bg-zinc-400'}`}
+                    />
+                ))}
+            </div>
 
-          {/* Dots */}
-          <div className="flex space-x-2">
-            {slides.map((_, idx) => (
-              <div
-                key={idx}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  activeSlide === idx
-                    ? 'bg-amber-500 w-6 sm:w-8'
-                    : 'bg-zinc-400 w-2'
-                }`}
-              />
-            ))}
-          </div>
-
-          {/* Buttons */}
-          <div className="flex space-x-4">
-            <button
-              onClick={prevSlide}
-              disabled={activeSlide === 0}
-              className={`
-                p-2 sm:p-3
-                rounded-full
-                border
-                transition-all
-                ${
-                  activeSlide === 0
-                    ? 'border-zinc-300 text-zinc-400 cursor-not-allowed'
-                    : 'border-zinc-400 text-zinc-800 hover:bg-zinc-100'
-                }
-              `}
-            >
-              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-            </button>
-
-            <button
-              onClick={nextSlide}
-              disabled={activeSlide === totalSlides - 1}
-              className={`
-                p-2 sm:p-3
-                rounded-full
-                border
-                transition-all
-                ${
-                  activeSlide === totalSlides - 1
-                    ? 'border-zinc-300 text-zinc-400 cursor-not-allowed'
-                    : 'bg-amber-500 border-amber-500 text-black hover:bg-amber-400'
-                }
-              `}
-            >
-              <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
-            </button>
-          </div>
-
+            <div className="flex space-x-4 pointer-events-auto">
+                <button 
+                    onClick={prevSlide}
+                    disabled={activeSlide === 0}
+                    className={`p-3 rounded-full backdrop-blur-md border ${
+                        activeSlide === 0 
+                        ? 'border-zinc-500/20 text-zinc-500 cursor-not-allowed' 
+                        : 'border-zinc-400/50 text-zinc-800 hover:bg-zinc-100 hover:text-black bg-white/10'
+                    }`}
+                >
+                    <ChevronLeft className="w-6 h-6" />
+                </button>
+                <button 
+                    onClick={nextSlide}
+                    disabled={activeSlide === totalSlides - 1}
+                    className={`p-3 rounded-full backdrop-blur-md border ${
+                        activeSlide === totalSlides - 1 
+                        ? 'border-zinc-500/20 text-zinc-500 cursor-not-allowed' 
+                        : 'bg-amber-500 border-amber-500 text-black hover:bg-amber-400'
+                    }`}
+                >
+                    <ArrowRight className="w-6 h-6" />
+                </button>
+            </div>
         </div>
       </div>
     </div>

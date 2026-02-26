@@ -19,7 +19,7 @@ const serviceData = {
     title: 'Launchpad',
     title_two: '',
     subtitle: 'Launchpad by MAGSMEN: Your Partner in Building Successful Ventures',
-    heroDescription: 'Launchpad is a comprehensive service for new brands, products, or career transitions. We handle the entire process from ideation to execution, ensuring your venture takes off with a solid foundation and a clear path to success.',
+    heroDescription: 'We craft brands with clarity, confidence, and cohesion,  built to stand out today and scale tomorrow.',
     heroBulletPoints: [ // Added new field for bullet points
       "Transform Your Idea into Reality with Launchpad", <br />,
       "Take Your Business to New Heights with MAGSMEN's Launchpad",<br />,
