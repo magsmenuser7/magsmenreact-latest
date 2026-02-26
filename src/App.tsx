@@ -42,6 +42,7 @@ import TdhGroupStrategicDashboard from './pages/TdhGroupStrategicDashboard';
 import TdhContentCalendarJAN2026 from './pages/TdhContentCalendarJAN2026';
 import WealthManagementLandscape from './pages/WealthManagementLandscape';
 import MagsmenStrategicProposal from './pages/MagsmenStrategicProposal';
+import SorvetIceCreamBrandPositioningAndMarketEntryStrategy from './pages/SorvetIceCreamBrandPositioningAndMarketEntryStrategy';
 
 
 
@@ -116,6 +117,8 @@ function App() {
           <Route path="/tdh-content-calendar-jan-2026" element={<TdhContentCalendarJAN2026 />} />
           <Route path="/wealth-management-landscape" element={<WealthManagementLandscape />} />
           <Route path="/magsmen-strategic-proposal" element={<MagsmenStrategicProposal />} />
+          <Route path="/sorvet-ice-cream-brand-positioning-and-market-entry-strategy" element={<SorvetIceCreamBrandPositioningAndMarketEntryStrategy />} />
+
 
 
 

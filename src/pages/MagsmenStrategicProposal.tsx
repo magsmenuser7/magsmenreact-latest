@@ -51,8 +51,8 @@ const MagsmenStrategicProposal = () => {
     return users.find((u) => u.email === email);
   };
 
+  
   // ================= LOGIN LOGIC =================
-
 const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
@@ -685,51 +685,93 @@ const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
 
 
 
+  return (
+    <div className="w-full min-h-screen bg-black flex items-center justify-center p-2 sm:p-6 font-sans">
+      
+      <div
+        className="
+          w-full
+          max-w-6xl
+          bg-white
+          rounded-none sm:rounded-xl
+          shadow-2xl
+          flex flex-col
+          h-screen sm:h-[85vh]
+          overflow-hidden
+        "
+      >
 
-return (
-    <div className="w-full h-screen bg-black flex items-center justify-center p-4 font-sans">
-      <div className="w-full max-w-6xl aspect-video bg-white rounded-xl overflow-hidden shadow-2xl relative">
-        
         {/* Slide Content */}
-        <div className="w-full h-full">
-            {slides[activeSlide]}
+        <div className="flex-1 overflow-auto">
+          {slides[activeSlide]}
         </div>
 
         {/* Navigation Bar */}
-        <div className="absolute bottom-0 w-full bg-transparent p-6 flex justify-between items-center pointer-events-none">
-            <div className="flex space-x-2 pointer-events-auto">
-                {slides.map((_, idx) => (
-                    <div 
-                        key={idx} 
-                        className={`w-2 h-2 rounded-full transition-all duration-300 ${activeSlide === idx ? 'bg-amber-500 w-8' : 'bg-zinc-400'}`}
-                    />
-                ))}
-            </div>
+        <div
+          className="
+            bg-white
+            border-t
+            p-4
+            flex flex-col sm:flex-row
+            items-center
+            justify-between
+            gap-4
+          "
+        >
 
-            <div className="flex space-x-4 pointer-events-auto">
-                <button 
-                    onClick={prevSlide}
-                    disabled={activeSlide === 0}
-                    className={`p-3 rounded-full backdrop-blur-md border ${
-                        activeSlide === 0 
-                        ? 'border-zinc-500/20 text-zinc-500 cursor-not-allowed' 
-                        : 'border-zinc-400/50 text-zinc-800 hover:bg-zinc-100 hover:text-black bg-white/10'
-                    }`}
-                >
-                    <ChevronLeft className="w-6 h-6" />
-                </button>
-                <button 
-                    onClick={nextSlide}
-                    disabled={activeSlide === totalSlides - 1}
-                    className={`p-3 rounded-full backdrop-blur-md border ${
-                        activeSlide === totalSlides - 1 
-                        ? 'border-zinc-500/20 text-zinc-500 cursor-not-allowed' 
-                        : 'bg-amber-500 border-amber-500 text-black hover:bg-amber-400'
-                    }`}
-                >
-                    <ArrowRight className="w-6 h-6" />
-                </button>
-            </div>
+          {/* Dots */}
+          <div className="flex space-x-2">
+            {slides.map((_, idx) => (
+              <div
+                key={idx}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  activeSlide === idx
+                    ? 'bg-amber-500 w-6 sm:w-8'
+                    : 'bg-zinc-400 w-2'
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Buttons */}
+          <div className="flex space-x-4">
+            <button
+              onClick={prevSlide}
+              disabled={activeSlide === 0}
+              className={`
+                p-2 sm:p-3
+                rounded-full
+                border
+                transition-all
+                ${
+                  activeSlide === 0
+                    ? 'border-zinc-300 text-zinc-400 cursor-not-allowed'
+                    : 'border-zinc-400 text-zinc-800 hover:bg-zinc-100'
+                }
+              `}
+            >
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
+
+            <button
+              onClick={nextSlide}
+              disabled={activeSlide === totalSlides - 1}
+              className={`
+                p-2 sm:p-3
+                rounded-full
+                border
+                transition-all
+                ${
+                  activeSlide === totalSlides - 1
+                    ? 'border-zinc-300 text-zinc-400 cursor-not-allowed'
+                    : 'bg-amber-500 border-amber-500 text-black hover:bg-amber-400'
+                }
+              `}
+            >
+              <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
+          </div>
+
         </div>
       </div>
     </div>
@@ -737,3 +779,4 @@ return (
 };
 
 export default MagsmenStrategicProposal;
+
