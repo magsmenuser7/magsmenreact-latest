@@ -616,10 +616,10 @@ export default function SorvetIceCreamBrandPositioningAndMarketEntryStrategy() {
               </div>
 
               <div className="bg-slate-100 p-6 md:p-8 rounded-xl border border-slate-200 mt-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                <div>
+                {/* <div>
                   <p className="text-sm text-slate-500 uppercase tracking-wider font-bold mb-1">Combined Engagement</p>
                   <p className="text-2xl sm:text-3xl font-bold text-slate-900">₹25,00,000 <span className="text-base sm:text-lg font-normal text-slate-500">+ GST</span></p>
-                </div>
+                </div> */}
                 <div className="w-full lg:w-auto flex-1 lg:ml-8 border-t lg:border-t-0 lg:border-l border-slate-300 pt-6 lg:pt-0 lg:pl-8">
                   <h4 className="font-bold text-slate-800 mb-3 flex items-center gap-2 text-lg"><Clock size={20}/> Payment Terms</h4>
                   <div className="flex flex-wrap gap-2 md:gap-3 text-xs md:text-sm font-medium">
