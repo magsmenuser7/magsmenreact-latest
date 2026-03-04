@@ -530,6 +530,28 @@ const Home = () => {
    
     <div className="grid md:grid-cols-2 gap-12">
 
+
+      <Link to="/case-studies/telugu-foods">
+        <div className="bg-[#f5f5f5] rounded-[40px] p-6 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-black/40 border-[0.5px]">
+
+          <div className="rounded-[28px] overflow-hidden mb-6">
+            <video className="w-full h-[240px] object-cover" autoPlay muted loop>
+              <source src={telugufoods} type="video/mp4" />
+            </video>
+          </div>
+
+          <p className="text-gray-700 text-sm leading-relaxed">
+            Built a strong digital-first food brand by driving awareness, engagement, and B2B growth through an integrated marketing strategy.
+          </p>
+
+          <div className="flex justify-end mt-6">
+            <button className="bg-black text-white text-xl font-medium px-8 py-2 rounded-2xl hover:bg-purple-700 transition">
+              Visit
+            </button>
+          </div>
+        </div>
+      </Link>
+
     
       <Link to="/case-studies/surya-colors">
         <div className="bg-[#f5f5f5] rounded-[40px] p-6 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-black/40 border-[0.5px]">
@@ -543,7 +565,7 @@ const Home = () => {
           
 
           <p className="text-gray-700 text-sm leading-relaxed">
-            Strategic brand positioning and digital transformation for a leading surface solutions company.
+           Stabilised and scaled a regional paints brand through a structured digital and brand-led growth strategy.
           </p>
 
           <div className="flex justify-end mt-6 ">
@@ -566,7 +588,7 @@ const Home = () => {
           </div>
 
           <p className="text-gray-700 text-sm leading-relaxed">
-            Elevating industrial branding through structured identity systems and market clarity.
+            Built Triplex’s digital-first presence, transforming a strong regional detergent brand into a high-engagement, multi-market digital player.
           </p>
 
           <div className="flex justify-end mt-6">
@@ -589,7 +611,7 @@ const Home = () => {
           </div>
 
           <p className="text-gray-700 text-sm leading-relaxed">
-            Revitalizing a heritage FMCG brand with modern storytelling and packaging evolution.
+            Re-architected TDH from a “single-roof, hero-product-led” brand into a future-ready Group plus vertical system.
           </p>
 
           <div className="flex justify-end mt-6">
@@ -612,7 +634,7 @@ const Home = () => {
           </div>
 
           <p className="text-gray-700 text-sm leading-relaxed">
-            Corporate rebranding strategy built for scale, trust, and competitive differentiation.
+            Transformed VSB Group into a globally consistent yet locally adaptable export brand across 45 international markets.
           </p>
 
           <div className="flex justify-end mt-6">
@@ -634,7 +656,7 @@ const Home = () => {
           </div>
 
           <p className="text-gray-700 text-sm leading-relaxed">
-            Launching India’s first detergent tablet brand with sharp positioning and retail visibility.
+            Built India’s first detergent tablet brand from scratch and positioned it as a modern, eco-friendly alternative in the home-care category.
           </p>
 
           <div className="flex justify-end mt-6">
@@ -646,26 +668,7 @@ const Home = () => {
       </Link>
 
     
-      <Link to="/case-studies/telugu-foods">
-        <div className="bg-[#f5f5f5] rounded-[40px] p-6 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-black/40 border-[0.5px]">
-
-          <div className="rounded-[28px] overflow-hidden mb-6">
-            <video className="w-full h-[240px] object-cover" autoPlay muted loop>
-              <source src={telugufoods} type="video/mp4" />
-            </video>
-          </div>
-
-          <p className="text-gray-700 text-sm leading-relaxed">
-            Transforming a legacy snack brand into a digitally discoverable and growth-ready powerhouse.
-          </p>
-
-          <div className="flex justify-end mt-6">
-            <button className="bg-black text-white text-xl font-medium px-8 py-2 rounded-2xl hover:bg-purple-700 transition">
-              Visit
-            </button>
-          </div>
-        </div>
-      </Link>
+      
 
     </div>
   </div>
