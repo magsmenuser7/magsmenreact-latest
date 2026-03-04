@@ -305,7 +305,7 @@ const displayedClients = showAll ? clients : clients.slice(0, 12);
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       {/* Hero Section */}
       <section className="bg-right bg-no-repeat bg-gradient-to-br from-black h-[540px] bg-cover bg-no-repeat bg-center via-gray-900 to-black text-white py-20 overflow-hidden "
       style={{ backgroundImage: `url(${aboutbackgroundimage})`}} 

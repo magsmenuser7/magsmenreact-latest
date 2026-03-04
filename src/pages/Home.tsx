@@ -516,56 +516,195 @@ const Home = () => {
 
     
       {/* new success stories section */}
-      <section className="py-24 bg-gray-300">
-        <div className="grid md:grid-cols-2 gap-10 mx-auto items-center justify-center max-w-7xl px-6 md:px-14">
-          {/* Left Text Section */}
-          <div>
-            <h1 className="text-4xl md:text-6xl font-light text-black tracking-tight md:mb-6">
-              Success <br />
-              <span className="font-thin">Stories</span>
-            </h1>
+      <section className="py-24 bg-white">
+  <div className="max-w-7xl mx-auto px-6 md:px-14">
+
+   
+    <div className="mb-16">
+      <h1 className="text-4xl md:text-6xl font-light text-black tracking-tight">
+        Success <br />
+        <span className="font-thin">Stories</span>
+      </h1>
+    </div>
+
+   
+    <div className="grid md:grid-cols-2 gap-12">
+
+    
+      <Link to="/case-studies/surya-colors">
+        <div className="bg-[#f5f5f5] rounded-[40px] p-6 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-black/40 border-[0.5px]">
+
+          <div className="rounded-[28px] overflow-hidden mb-6">
+            <video className="w-full h-[240px] object-cover" autoPlay muted loop>
+              <source src={suryacolorsvideo} type="video/mp4" />
+            </video>
             
           </div>
-          <p className="md:text-1xl text-xl tracking-wider font-normal text-black">
-              Strong brands are built patiently.
-We partner with you to turn ideas into progress that lasts.
-Good marketing works hard,
-Great strategy works smarter.
-We complement your team with the insight and structure that help your brand grow with purpose.
+          
 
-            </p>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            Strategic brand positioning and digital transformation for a leading surface solutions company.
+          </p>
 
-          {/* Right Image Grid */}
-          {/* video Card 1 */}
-          <Link to="/case-studies/telugu-foods">
-          <div className="relative group rounded-[48px] overflow-hidden">
-            <video className="w-full h-full object-cover"  autoPlay muted loop>
-                <source src={telugufoods} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div>
-            {/* Title */}
-            <h3 className="absolute bottom-4 left-4 text-white text-xl opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-              Telugu Foods
-            </h3>
+          <div className="flex justify-end mt-6 ">
+            <button className="bg-black text-white text-xl px-8 py-2 rounded-2xl hover:bg-purple-700 transition font-medium">
+              Visit
+            </button>
           </div>
-          </Link>
+        </div>
+      </Link>
 
-          <Link to="/case-studies/surya-colors">
-          <div className="relative group rounded-[48px] overflow-hidden">
-            <video className="w-full h-full object-cover"  autoPlay muted loop>
-                <source src={suryacolorsvideo} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div>
-            <h3 className="absolute bottom-4 left-4 text-white text-xl opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-              Surya Colors
-            </h3>
+     
+      <Link to="/case-studies/triplex">
+        <div className="bg-[#f5f5f5] rounded-[40px] p-6 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2
+        border-black/40 border-[0.5px]">
+
+          <div className="rounded-[28px] overflow-hidden mb-6">
+            <video className="w-full h-[240px] object-cover" autoPlay muted loop>
+              <source src={xxxvideo} type="video/mp4" />
+            </video>
           </div>
-          </Link>
 
-          {/* <div className="relative group rounded-[48px] overflow-hidden">
+          <p className="text-gray-700 text-sm leading-relaxed">
+            Elevating industrial branding through structured identity systems and market clarity.
+          </p>
+
+          <div className="flex justify-end mt-6">
+            <button className="bg-black text-white text-xl px-8 py-2 rounded-2xl hover:bg-purple-700  transition font-medium">
+              Visit
+            </button>
+          </div>
+        </div>
+      </Link>
+
+
+     
+      <Link to="/case-studies/tenali-double-horse">
+        <div className="bg-[#f5f5f5] rounded-[40px] p-6 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-black/40 border-[0.5px]">
+
+          <div className="rounded-[28px] overflow-hidden mb-6">
+            <video className="w-full h-[240px] object-cover" autoPlay muted loop>
+              <source src={tenalidoublehorsevideo} type="video/mp4" />
+            </video>
+          </div>
+
+          <p className="text-gray-700 text-sm leading-relaxed">
+            Revitalizing a heritage FMCG brand with modern storytelling and packaging evolution.
+          </p>
+
+          <div className="flex justify-end mt-6">
+            <button className="bg-black text-white text-xl px-8 py-2 rounded-2xl hover:bg-purple-700 transition font-medium">
+              Visit
+            </button>
+          </div>
+        </div>
+      </Link>
+
+     
+     
+      <Link to="/case-studies/vsb-group">
+        <div className="bg-[#f5f5f5] rounded-[40px] p-6 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-black/40 border-[0.5px]">
+
+          <div className="rounded-[28px] overflow-hidden mb-6">
+            <video className="w-full h-[240px] object-cover" autoPlay muted loop>
+              <source src={vsbvideo} type="video/mp4" />
+            </video>
+          </div>
+
+          <p className="text-gray-700 text-sm leading-relaxed">
+            Corporate rebranding strategy built for scale, trust, and competitive differentiation.
+          </p>
+
+          <div className="flex justify-end mt-6">
+            <button className="bg-black text-white text-xl px-8 py-2 rounded-2xl hover:bg-purple-700 transition font-medium">
+              Visit
+            </button>
+          </div>
+        </div>
+      </Link>
+
+     
+      <Link to="/case-studies/zavaine">
+        <div className="bg-[#f5f5f5] rounded-[40px] p-6 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-black/40 border-[0.5px]">
+
+          <div className="rounded-[28px] overflow-hidden mb-6">
+            <video className="w-full h-[240px] object-cover" autoPlay muted loop>
+              <source src={zavainevideo} type="video/mp4" />
+            </video>
+          </div>
+
+          <p className="text-gray-700 text-sm leading-relaxed">
+            Launching India’s first detergent tablet brand with sharp positioning and retail visibility.
+          </p>
+
+          <div className="flex justify-end mt-6">
+            <button className="bg-black font-medium text-white text-xl px-8 py-2 rounded-2xl hover:bg-purple-700 transition">
+              Visit
+            </button>
+          </div>
+        </div>
+      </Link>
+
+    
+      <Link to="/case-studies/telugu-foods">
+        <div className="bg-[#f5f5f5] rounded-[40px] p-6 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-black/40 border-[0.5px]">
+
+          <div className="rounded-[28px] overflow-hidden mb-6">
+            <video className="w-full h-[240px] object-cover" autoPlay muted loop>
+              <source src={telugufoods} type="video/mp4" />
+            </video>
+          </div>
+
+          <p className="text-gray-700 text-sm leading-relaxed">
+            Transforming a legacy snack brand into a digitally discoverable and growth-ready powerhouse.
+          </p>
+
+          <div className="flex justify-end mt-6">
+            <button className="bg-black text-white text-xl font-medium px-8 py-2 rounded-2xl hover:bg-purple-700 transition">
+              Visit
+            </button>
+          </div>
+        </div>
+      </Link>
+
+    </div>
+  </div>
+</section>
+
+              {/* <section className="py-24 bg-white">
+   <div className="grid md:grid-cols-2 gap-10 mx-auto items-center justify-center max-w-7xl px-6 md:px-14">  
+    <div> <h1 className="text-4xl md:text-6xl font-light text-black tracking-tight md:mb-6"> Success <br /> <span className="font-thin">Stories</span> </h1>
+     </div> <br/> 
+      <Link to="/case-studies/surya-colors"> 
+      <div className="relative group rounded-[48px] overflow-hidden"> 
+        <video className="w-full h-full object-cover" autoPlay muted loop> 
+          <source src={suryacolorsvideo} type="video/mp4" /> Your browser does not support the video tag. </video> 
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out">
+          </div>
+           <h3 className="absolute bottom-4 left-4 text-white text-xl opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"> Surya Colors
+             </h3> 
+           </div> 
+           </Link>
+            <Link to="/case-studies/tenali-double-horse"> 
+            <div className="relative group rounded-[48px] overflow-hidden"> 
+              <video className="w-full h-full object-cover" autoPlay muted loop> 
+                <source src={tenalidoublehorsevideo} type="video/mp4" /> Your browser does not support the video tag. 
+                </video>
+                 <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out">
+                 </div>
+                  <h3 className="absolute bottom-4 left-4 text-white text-xl opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"> Tenali Double Horse </h3>
+                   </div> 
+                   </Link>
+                    <Link to="/case-studies/triplex">
+                     <div className="relative group rounded-[48px] overflow-hidden">
+                       <video className="w-full h-full object-cover" autoPlay muted loop> 
+                        <source src={xxxvideo} type="video/mp4" /> Your browser does not support the video tag. </video>
+                         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div> <h3 className="absolute bottom-4 left-4 text-white text-xl opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"> XXX </h3> </div> </Link> <Link to="/case-studies/vsb-group"> <div className="relative group rounded-[48px] overflow-hidden"> <video className="w-full h-full object-cover" autoPlay muted loop> <source src={vsbvideo} type="video/mp4" /> Your browser does not support the video tag. </video> <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div> <h3 className="absolute bottom-4 left-4 text-white text-xl opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"> VSB Surface </h3> </div> </Link> <Link to="/case-studies/zavaine"> <div className="relative group rounded-[48px] overflow-hidden"> <video className="w-full h-full object-cover" autoPlay muted loop> <source src={zavainevideo} type="video/mp4" /> Your browser does not support the video tag. </video> <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div> <h3 className="absolute bottom-4 left-4 text-white text-xl opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"> ZAVAINE </h3> </div> </Link> <Link to="/case-studies/telugu-foods"> <div className="relative group rounded-[48px] overflow-hidden"> <video className="w-full h-full object-cover" autoPlay muted loop> <source src={telugufoods} type="video/mp4" /> Your browser does not support the video tag. </video> \ <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div> <h3 className="absolute bottom-4 left-4 text-white text-xl opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"> Telugu Foods </h3> </div> </Link> </div> 
+              </section> */}
+
+{/* <p className="md:text-1xl text-xl tracking-wider font-normal text-black"> Strong brands are built patiently. We partner with you to turn ideas into progress that lasts. Good marketing works hard, Great strategy works smarter. We complement your team with the insight and structure that help your brand grow with purpose. </p> */}
+
+{/* <div className="relative group rounded-[48px] overflow-hidden">
             <video className="w-full h-full object-cover"  autoPlay muted loop>
                 <source src="public/assets/works/tdh-rishika.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
@@ -575,64 +714,6 @@ We complement your team with the insight and structure that help your brand grow
               TDH Rishika
             </h3>
           </div> */}
-
-            <Link to="/case-studies/tenali-double-horse">
-          <div className="relative group rounded-[48px] overflow-hidden">
-            <video className="w-full h-full object-cover"  autoPlay muted loop>
-                <source src={tenalidoublehorsevideo} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div>
-            <h3 className="absolute bottom-4 left-4 text-white text-xl opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-              Tenali Double Horse
-            </h3>
-          </div>
-          </Link>
-
-
-            <Link to="/case-studies/triplex">
-          <div className="relative group rounded-[48px] overflow-hidden">
-            <video className="w-full h-full object-cover"  autoPlay muted loop>
-                <source src={xxxvideo} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div>
-            <h3 className="absolute bottom-4 left-4 text-white text-xl opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-                XXX
-            </h3>
-          </div>
-          </Link>
-
-            <Link to="/case-studies/vsb-group">
-          <div className="relative group rounded-[48px] overflow-hidden">
-            <video className="w-full h-full object-cover"  autoPlay muted loop>
-                <source src={vsbvideo} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div>
-            <h3 className="absolute bottom-4 left-4 text-white text-xl opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-              VSB Surface
-            </h3>
-          </div>
-          </Link>
-
-
-            <Link to="/case-studies/zavaine">
-          <div className="relative group rounded-[48px] overflow-hidden">
-            <video className="w-full h-full object-cover"  autoPlay muted loop>
-                <source src={zavainevideo} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div>
-            <h3 className="absolute bottom-4 left-4 text-white text-xl opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-              ZAVAINE
-            </h3>
-          </div>
-          </Link>
-        </div>
-      </section>
-
-
 
 
 
@@ -645,22 +726,30 @@ We complement your team with the insight and structure that help your brand grow
           </div>
           <div className="w-full md:w-4/5 bg-black  shadow py-4 relative" style={{ minHeight: 420 }}>
             <ul className="w-full">
-              {services.map((service, idx) => (
-                <li key={service.name} className="flex flex-col">
-                  <div className="flex items-center justify-between group">
-                    <span className="text-white/60 text-2xl md:text-3xl py-4 pl-2">{service.name}</span>
-                    <Link
-                      to={service.href}
-                      className="ml-4 flex items-center text-white/60 hover:text-[#683FBF] transition-colors"
-                      aria-label={`Go to ${service.name}`}
-                    >
-                      <ArrowUpRight size={28} />
-                    </Link>
-                  </div>
-                  {idx !== services.length - 0 && <hr className="border-b border-gray-500 w-full" />}
-                </li>
-              ))}
-            </ul>
+  {services.map((service, idx) => (
+    <li key={service.name} className="flex flex-col">
+      
+      <Link
+        to={service.href}
+        className="flex items-center justify-between group py-4 pl-2 text-white/60 hover:text-[#683FBF] transition-colors"
+        aria-label={`Go to ${service.name}`}
+      >
+        <span className="text-2xl md:text-3xl">
+          {service.name}
+        </span>
+
+        <ArrowUpRight
+          size={28}
+          className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+        />
+      </Link>
+
+      {idx !== services.length - 1 && (
+        <hr className="border-b border-gray-500 w-full" />
+      )}
+    </li>
+  ))}
+</ul>
           </div>
         </div>
       </section>
@@ -707,6 +796,66 @@ We complement your team with the insight and structure that help your brand grow
           </div>
         </div>
       </section>
+
+
+{/* <section className="w-full bg-black py-32">
+  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+
+
+    <ul className="w-full">
+      {services.map((service, idx) => (
+        <li
+          key={service.name}
+          onMouseEnter={() => setActiveIndex(idx)}
+          onClick={() => navigate(service.href)}
+          className="cursor-pointer"
+        >
+          <div className="flex items-center justify-between py-6 group">
+            <span
+              className={`text-2xl md:text-3xl transition-colors ${
+                activeIndex === idx ? "text-white" : "text-white/50"
+              }`}
+            >
+              {service.name}
+            </span>
+
+            <ArrowUpRight
+              size={28}
+              className={`transition-colors ${
+                activeIndex === idx
+                  ? "text-[#683FBF]"
+                  : "text-white/40"
+              }`}
+            />
+          </div>
+
+          <hr className="border-b border-white/10" />
+        </li>
+      ))}
+    </ul>
+
+    <div>
+      <div className="rounded-2xl overflow-hidden mt-16">
+        <img
+          src={servicePreviewMap[services[activeIndex].name].image}
+          alt={services[activeIndex].name}
+          className="w-full h-[420px] object-cover transition-all duration-300"
+        />
+      </div>
+
+      <div className="pt-6">
+        <h3 className="text-white text-2xl mb-2">
+          {servicePreviewMap[services[activeIndex].name].title}
+        </h3>
+
+        <p className="text-white/60 text-sm leading-relaxed max-w-md">
+          {servicePreviewMap[services[activeIndex].name].description}
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section> */}
 
 
 
